@@ -30,3 +30,21 @@ alias python="python3"
 alias pip="python3 -m pip"
 
 alias ls='ls -a'
+
+function gitftherb(){
+    git config --global user.name "FtherB"
+    git config --global user.email "aliclahso29103@gmail.com"
+    source ~/.zshrc
+}
+
+function gits255(){
+    git config --global user.name "S-255"
+    git config --global user.email "threeair7@outlook.jp"
+    source ~/.zshrc
+}
+
+# show current github account
+export PROMPT="
+%F{green}[%~]%f <`git config user.name`>
+=> %# "
+RPROMPT='%*'

@@ -1,0 +1,6 @@
+[user]
+	name = FtherB
+	email = aliclahso29103@gmail.com
+
+[includeIf "gitdir:~/prog/anc"]
+    path = ~/dotfiles/config/git/.gitconfig_s255
