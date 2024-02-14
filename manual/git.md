@@ -37,3 +37,10 @@ Host github github.com
     User git
 ```
 **公開鍵**を[ここ](https://github.com/settings/ssh)にアップする
+
+# リモートリポジトリURLの設定
+githubのssh URLは
+git@github.com:<account name>/<repository>.git
+になっているが，これを，
+git@**githunb-ftherb**:FtherB/<repository>.git
+に変えること．
