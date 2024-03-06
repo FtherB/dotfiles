@@ -43,8 +43,23 @@ function gits255(){
     source ~/.zshrc
 }
 
+
+source ~/dotfiles/config/zsh/git-prompt.sh
+
+fpath=(~/dotfiles/config/zsh $fpath)
+zstyle ':completion:*:*:git:*' script ~/dotfiles/config/zsh/git-completion.bash
+autoload _Uz compinit && compinit
+
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+
+# setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
+# \$ '
+
 # show current github account
 export PROMPT="
-%F{green}[%~]%f <`git config user.name`>
+%F{green}[%~]%f <`git config user.name`> %F{cyan}$(__git_ps1 "(%s)")%f
 => %# "
 RPROMPT='%*'
