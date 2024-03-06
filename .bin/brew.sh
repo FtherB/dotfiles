@@ -1,9 +1,11 @@
 echo 'installing mac applications...'
 brew update
 brew upgrade
+brew install cask
 brew install neovim
 brew install octave
 brew install ffmpeg
+brew install yt-dlp
 
 # cask
 brew install --cask warp
