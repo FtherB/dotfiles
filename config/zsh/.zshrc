@@ -26,6 +26,12 @@ alias vi="nvim"
 alias vim="nvim"
 alias view="nvim -R"
 
+# neovim PATH
+export NEOVIM_HOME=$HOME/.local/nvim
+if [ -d "${NEOVIM_HOME}" ]; then
+	export PATH="${NEOVIM_HOME}/bin:$PATH"
+fi
+
 alias python="python3"
 alias pip="python3 -m pip"
 
@@ -63,3 +69,6 @@ export PROMPT="
 %F{green}[%~]%f <`git config user.name`> %F{cyan}$(__git_ps1 "(%s)")%f
 => %# "
 RPROMPT='%*'
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"

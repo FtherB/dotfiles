@@ -29,3 +29,15 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     else
         echo 'brew already installed'
     fi
+
+    #neovim install
+    if ![ -d ${HOME}/neovim/neovim]; then
+        CURRENT_DIR=`dirname $0`
+        cd ${HOME}
+        mkdir neovim
+        cd ${HOME}/neovim
+        git clone https://github.com/neovim/neovim
+        cd CURRENT_DIR
+    fi
+
+    bash ./install_nvim.sh
