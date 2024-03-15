@@ -37,7 +37,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         mkdir neovim
         cd ${HOME}/neovim
         git clone https://github.com/neovim/neovim
-        cd CURRENT_DIR
+        cd ${CURRENT_DIR}
     fi
 
     bash ./install_nvim.sh

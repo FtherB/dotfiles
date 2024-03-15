@@ -30,3 +30,7 @@ brew install node
 
 #openjdk
 brew install openjdk@21
+
+# im-select
+brew tap daipeihust/tap
+brew install im-select
