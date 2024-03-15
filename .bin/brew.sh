@@ -34,3 +34,7 @@ brew install openjdk@21
 # im-select
 brew tap daipeihust/tap
 brew install im-select
+
+# zsh plugins
+brew install zsh-syntax-highlighting
+brew install zsh-autosuggestions

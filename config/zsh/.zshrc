@@ -72,3 +72,6 @@ RPROMPT='%*'
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

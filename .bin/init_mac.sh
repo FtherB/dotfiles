@@ -1,43 +1,29 @@
 #!/bin/bash
 
-# linux
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    echo 'Linux'
+# mac setup
+echo 'mac'
+BIN_DIR=${HOME}/dotfiles/.bin
 
-    . /etc/os-release
-    case $ID in
-        ubuntu)
-            echo 'ubuntu'
-            sudo apt-get install -y software-properties-common
-            sudo add-apt-repository -y ppa:neovim-ppa/unstable
-            sudo apt-get -y update
-            sudo apt-get install -y neovim
-            sudo apt-get -y upgrade
-            ;;
-        arch)
-            echo 'Arch'
-            ;;
-    esac
-# mac
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    echo 'mac'
+cd ${BIN_DIR}
 
-    if ! command -v brew &> /dev/null 
-    then
-        echo 'installing brew...'
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    else
-        echo 'brew already installed'
-    fi
+if ! command -v brew &> /dev/null 
+then
+    echo 'installing brew...'
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+    echo 'brew already installed'
+fi
 
-    #neovim install
-    if ![ -d ${HOME}/neovim/neovim]; then
-        CURRENT_DIR=`dirname $0`
-        cd ${HOME}
-        mkdir neovim
-        cd ${HOME}/neovim
-        git clone https://github.com/neovim/neovim
-        cd ${CURRENT_DIR}
-    fi
+# install packages
+bash ./brew.sh
 
-    bash ./install_nvim.sh
+#neovim install
+if ![ -d ${HOME}/neovim/neovim]; then
+    cd ${HOME}
+    mkdir neovim
+    cd ${HOME}/neovim
+    git clone https://github.com/neovim/neovim
+    cd ${BIN_DIR}
+fi
+
+bash ./install_nvim.sh
