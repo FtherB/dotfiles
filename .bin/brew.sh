@@ -13,7 +13,10 @@ brew install --cask mactex-no-gui
 brew install --cask iTerm2
 brew install --cask google-chrome
 brew install --cask raycast
-
+brew install --cask slack
+brew install --cask firefoxe
+brew install --cask microsoft-office
+brew install --cask zoom
 
 # python
 brew install pyenv
