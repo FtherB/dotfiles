@@ -17,6 +17,7 @@ brew install --cask slack
 brew install --cask firefoxe
 brew install --cask microsoft-office
 brew install --cask zoom
+brew install --cask atok
 
 # python
 brew install pyenv
