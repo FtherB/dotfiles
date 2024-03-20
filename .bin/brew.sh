@@ -6,6 +6,10 @@ brew install cask
 brew install octave
 brew install ffmpeg
 brew install yt-dlp
+brew install ninja
+brew install cmake
+brew install gettext
+brew install curl
 
 # cask
 brew install --cask warp
@@ -14,7 +18,7 @@ brew install --cask iTerm2
 brew install --cask google-chrome
 brew install --cask raycast
 brew install --cask slack
-brew install --cask firefoxe
+brew install --cask firefox
 brew install --cask microsoft-office
 brew install --cask zoom
 brew install --cask atok
