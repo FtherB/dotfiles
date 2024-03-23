@@ -32,10 +32,40 @@ if [ -d "${NEOVIM_HOME}" ]; then
 	export PATH="${NEOVIM_HOME}/bin:$PATH"
 fi
 
+# function updatenvim(){
+#     reinstall() {
+#         sh $HOME/dotfiles/.bin/reinstall_nvim.sh
+#     }
+# 
+#     help() {
+#         echo 'update neovim to the newest version.'
+#         echo 'if updatenvim does not work, use -r option.'
+#     }
+# 
+#     for arg in $*
+#     do
+#         case $arg in
+#             -h|--help)
+#                 help
+#                 return
+#                 ;;
+# 
+#             -r|--reinstall)
+#                 reinstall
+#                 return
+#                 ;;
+#             *)
+#                 sh $HOME/dotfiles/.bin/install_nvim.sh
+#         esac
+#     done
+# }
+
 alias python="python3"
 alias pip="python3 -m pip"
 
+# ls command
 alias ls='ls -a'
+export LSCOLORS=gxfxcxdxbxGxDxabagaca
 
 function gitftherb(){
     git config --global user.name "FtherB"
@@ -82,3 +112,5 @@ if [ `uname` = "Darwin" ]; then
       eval "$(pyenv init -)"
     fi
 fi
+
+alias globalip="curl ipecho.net/plain; echo"
