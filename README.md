@@ -1,4 +1,6 @@
 # dotfiles
+<details><summary>directory tree</summary>
+<div>
 <pre>
 .
 ├── .bin
@@ -48,6 +50,7 @@
         │   └── vimtex.lua
         └── plugins.lua
 </pre>
+</div></details>
 
 ## Contents
 nvim (neovim settings)
