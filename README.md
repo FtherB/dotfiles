@@ -1,6 +1,6 @@
 # dotfiles
 ```
-dotfiles
+dotfiles
 ├── Makefile
 ├── Makefile_linux
 ├── Makefile_mac
