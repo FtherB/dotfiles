@@ -16,6 +16,8 @@ local on_attach = function(client, bufnr)
 
 end
 
+require("mason").setup()
+require("mason-lspconfig").setup()
 require("mason-lspconfig").setup_handlers{
     function (server_name)
         require("lspconfig")[server_name].setup{
@@ -37,3 +39,7 @@ augroup lsp_document_highlight
     autocmd CursorMoved,CursorMovedI * lua vim.lsp.buf.clear_references()
 augroup END
 ]]
+
+vim.diagnostic.config({
+    virtual_text = true
+})

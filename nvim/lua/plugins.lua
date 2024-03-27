@@ -36,6 +36,27 @@ require("lazy").setup({
         'williamboman/mason-lspconfig.nvim',
 
     },
+
+    -- auto cmp
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/vim-vsnip",
+
+    {
+        'windwp/nvim-autopairs',
+        event = "insertEnter",
+        config = true,
+    },
+        
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'kyazdani42/nvim-web-devicons' },
+        opts = {
+            options = {
+                theme = 'nightfox',
+            },
+        },
+    },
 },
 -- lazy options
 {
