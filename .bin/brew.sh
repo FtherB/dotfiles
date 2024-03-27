@@ -11,6 +11,7 @@ brew install cmake
 brew install gettext
 brew install curl
 brew install iproute2mac
+brew install tree
 
 # cask
 brew install --cask warp
