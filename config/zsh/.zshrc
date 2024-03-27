@@ -114,3 +114,6 @@ if [ `uname` = "Darwin" ]; then
 fi
 
 alias globalip="curl ipecho.net/plain; echo"
+
+
+alias tree='cmd="command tree -a -I .git"; echo $cmd; eval ${cmd}'
