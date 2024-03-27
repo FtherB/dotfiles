@@ -1,6 +1,6 @@
 # dotfiles
-```
-dotfiles
+<pre>
+.
 ├── Makefile
 ├── Makefile_linux
 ├── Makefile_mac
@@ -32,7 +32,7 @@ dotfiles
         │   ├── others.lua
         │   └── vimtex.lua
         └── plugins.lua
-```
+</pre>
 
 ## Contents
 nvim (neovim settings)
