@@ -21,7 +21,6 @@
 └── nvim
     ├── README.md
     ├── init.lua
-    ├── lazy-lock.json
     └── lua
         ├── autocmd.lua
         ├── keymaps.lua
