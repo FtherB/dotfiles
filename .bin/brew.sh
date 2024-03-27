@@ -12,6 +12,8 @@ brew install gettext
 brew install curl
 brew install iproute2mac
 brew install tree
+brew install node
+brew install yarn --ignore-dependencies
 
 # cask
 brew install --cask warp
