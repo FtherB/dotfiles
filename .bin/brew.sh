@@ -14,6 +14,7 @@ brew install iproute2mac
 brew install tree
 brew install node
 brew install yarn --ignore-dependencies
+brew install tmux
 
 # cask
 brew install --cask warp
@@ -27,6 +28,8 @@ brew install --cask microsoft-office
 brew install --cask zoom
 brew install --cask atok
 brew install --cask inkscape
+brew install --cask thunderbird
+brew install --cask hhkb
 
 # python
 brew install pyenv
