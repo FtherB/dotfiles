@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo 'installing mac applications...'
 brew update
 brew upgrade
