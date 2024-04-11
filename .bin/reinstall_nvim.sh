@@ -1,6 +1,6 @@
 #!bin/sh
 
-# reference: https://qiita.com/uhooi/items/95ffbfc1270df79f1fbd
+# Reference: https://qiita.com/uhooi/items/95ffbfc1270df79f1fbd
 
 CURRENT_DIR=`dirname $0`
 NVIM_ROOT=${HOME}/neovim/neovim
@@ -10,7 +10,7 @@ cd ${NVIM_ROOT}
 
 cd ..
 
-echo 'removing neovim...'
+echo 'Removing neovim...'
 rm -rf neovim
 
 git clone https://github.com/neovim/neovim

@@ -36,10 +36,6 @@ brew install pyenv
 pyenv install 3.11.4
 pyenv install 3.9.6
 pyenv global 3.11.4
-pip install numpy
-pip install matplotlib
-pip install pandas
-pip install scipy
 
 # node
 brew install node
