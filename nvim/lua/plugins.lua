@@ -11,9 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 require("lazy").setup(
 {
     -- plugins
@@ -99,6 +96,38 @@ require("lazy").setup(
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {},
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {},
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+    },
+    {
+        "keaising/im-select.nvim",
+        config = function()
+            require("im_select").setup({})
+        end,
+    },
+    {
+        "mbbill/undotree",
+    },
+    {
+        "lervag/vimtex",
+        lazy = true,
+        ft = { "tex" },
     },
 },
 -- lazy options
