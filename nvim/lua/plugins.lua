@@ -14,7 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-require("lazy").setup({
+require("lazy").setup(
+{
     -- plugins
     -- colorscheme
     {
@@ -77,6 +78,27 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
         },
+        enabled = false,
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("nvim-tree").setup{}
+        end,
+    },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",opts = {},
+        enabled = false,
+    },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
     },
 },
 -- lazy options

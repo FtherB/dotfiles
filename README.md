@@ -62,6 +62,7 @@ tmux (WIP)
 ## Note
 - Run reinstall\_nvim.sh when cmake is updated.
 
+<!---
 ### brew error
 ```
 Failed to download https://formulae.brew.sh/api/formula.jws.json!
@@ -74,3 +75,4 @@ brew update
 ```
 export HOMEBREW_NO_INSTALL_FROM_API=1
 ```
+--->
