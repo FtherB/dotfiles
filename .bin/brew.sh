@@ -17,6 +17,7 @@ brew install tree
 brew install node
 brew install yarn --ignore-dependencies
 brew install tmux
+brew install neofetch
 
 # cask
 brew install --cask warp
