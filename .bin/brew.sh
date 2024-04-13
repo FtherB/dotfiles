@@ -44,7 +44,8 @@ pyenv global 3.11.4
 brew install node
 
 #openjdk
-brew install openjdk@21
+# brew install openjdk@21
+brew install jenv
 
 # im-select
 brew tap daipeihust/tap

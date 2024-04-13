@@ -1,5 +1,5 @@
 details: "darker"
-accent: "#a9a3e0"
+accent: "#fff300"
 foreground: "#ffffff"
 background: "#191830"
 background_image:
@@ -14,7 +14,7 @@ terminal_colors:
     green: "#00ff7f"
     blue: "#6943ff"
     white: "#ffffff"
-    magenta: "#B8062C"
+    magenta: "#ffa8fe"
   normal:
     black: "#000000"
     green: "#00ff7f"
@@ -22,6 +22,6 @@ terminal_colors:
     red: "#f5b2ac"
     yellow: "#fad000"
     cyan: "#80fcff"
-    magenta: "#B8062C"
+    magenta: "#ffa8fe"
     white: "#ffffff"
 
