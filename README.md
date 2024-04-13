@@ -5,6 +5,7 @@ for Mac with Apple Silicon
 <details><summary>directory tree</summary>
 <div>
 <pre>
+
 .
 ├── .bin
 │   ├── brew.sh
@@ -12,6 +13,7 @@ for Mac with Apple Silicon
 │   ├── init_mac.sh
 │   ├── install_nvim.sh
 │   ├── link_mac.sh
+│   ├── pip.sh
 │   ├── reinstall_nvim.sh
 │   ├── set_defaults_mac.sh
 │   └── upgrade.sh
@@ -21,6 +23,11 @@ for Mac with Apple Silicon
 ├── Makefile_mac
 ├── README.md
 ├── config
+│   ├── .latexmkrc
+│   ├── .warp
+│   │   └── themes
+│   │       ├── f_jp.yaml
+│   │       └── f_milky.yaml
 │   ├── git
 │   │   ├── .gitconfig
 │   │   ├── .gitconfig_s255
@@ -41,7 +48,15 @@ for Mac with Apple Silicon
 └── nvim
     ├── .gitignore
     ├── README.md
+    ├── after
+    │   └── plugin
+    │       ├── im-select.lua
+    │       ├── indent-blankline.lua
+    │       ├── nightfox.lua
+    │       ├── treesitter.lua
+    │       └── vimtex.lua
     ├── init.lua
+    ├── lazy-lock.json
     └── lua
         ├── autocmd.lua
         ├── keymaps.lua
@@ -51,7 +66,8 @@ for Mac with Apple Silicon
         │   ├── nvim_tree.lua
         │   ├── others.lua
         │   └── vimtex.lua
-        └── plugins.lua
+        ├── plugins.lua
+        └── toggle.lua
 </pre>
 </div></details>
 
@@ -64,18 +80,3 @@ tmux (WIP)
 
 ## Note
 - Run reinstall\_nvim.sh when cmake is updated.
-
-<!---
-### brew error
-```
-Failed to download https://formulae.brew.sh/api/formula.jws.json!
-```
-Try:
-```
-rm -r "$(brew --cache)/api"
-brew update
-```
-```
-export HOMEBREW_NO_INSTALL_FROM_API=1
-```
---->

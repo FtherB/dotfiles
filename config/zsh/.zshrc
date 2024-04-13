@@ -117,7 +117,7 @@ fi
 alias globalip="curl ipecho.net/plain; echo"
 
 
-alias tree='cmd="command tree -a -I .git"; echo $cmd; eval ${cmd}'
+alias tree='cmd="command tree -a -I .git -I .DS_Store"; echo $cmd; eval ${cmd}'
 
 # curl
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
