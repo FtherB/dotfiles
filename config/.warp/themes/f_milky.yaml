@@ -1,0 +1,26 @@
+details: "darker"
+accent: "#a9a3e0"
+foreground: "#ffffff"
+background: "#031c29"
+background_image:
+  path: ~/OneDrive/pictures/wallpapers/milky_mountain.jpg
+  opacity: 40
+terminal_colors:
+  bright:
+    black: "#5c5c61"
+    red: "#f5b2ac"
+    yellow: "#fad000"
+    cyan: "#80fcff"
+    green: "#00ff7f"
+    blue: "#6943ff"
+    white: "#ffffff"
+    magenta: "#B8062C"
+  normal:
+    black: "#000000"
+    green: "#00ff7f"
+    blue: "#7857fe"
+    red: "#f5b2ac"
+    yellow: "#fad000"
+    cyan: "#80fcff"
+    magenta: "#B8062C"
+    white: "#ffffff"

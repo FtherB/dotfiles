@@ -23,7 +23,7 @@ zinit light-mode for \
     ### End of Zinit's installer chunk
     #
 alias vi="nvim"
-alias vim="nvim"
+# alias vim="nvim"
 alias view="nvim -R"
 
 # neovim PATH
@@ -67,6 +67,7 @@ alias pip="python3 -m pip"
 alias ls='ls -a'
 export LSCOLORS=gxfxcxdxbxGxDxabagaca
 
+# git account
 function gitftherb(){
     git config --global user.name "FtherB"
     git config --global user.email "aliclahso29103@gmail.com"
@@ -125,3 +126,5 @@ export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/curl/lib/pkgconfig"
 
 export PATH="/usr/local/texlive/2024/bin/universal-dawin:$PATH"
+
+export PATH="/opt/homebrew/opt/git/bin:$PATH"
