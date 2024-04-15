@@ -1,4 +1,4 @@
 # Neovim config
 
 - plugin manager
-    - packer.nvim
+    - Lazy.nvim

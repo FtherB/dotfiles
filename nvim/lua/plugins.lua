@@ -63,8 +63,8 @@ require("lazy").setup(
       init = function()
         vim.g.mkdp_filetypes = { "markdown" }
       end,
-      ft = { "markdown" },
       lazy = true,
+      ft = { "markdown" }
     },
 
     {
