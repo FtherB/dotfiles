@@ -33,6 +33,7 @@ brew install --cask atok
 brew install --cask inkscape
 brew install --cask thunderbird
 brew install --cask hhkb
+brew install --cask xnviewmp
 
 # python
 brew install pyenv
