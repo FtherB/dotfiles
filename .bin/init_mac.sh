@@ -6,6 +6,7 @@ BIN_DIR=${HOME}/dotfiles/.bin
 
 cd ${BIN_DIR}
 
+mkdir -p ${HOME}/.config/
 if ! command -v brew &> /dev/null 
 then
     echo 'installing brew...'
@@ -27,3 +28,6 @@ if ![ -d ${HOME}/neovim/neovim]; then
 fi
 
 bash ./install_nvim.sh
+
+# setup gitignore
+git config --global core.excludesfile ${HOME}/dotfiles/config/git/.gitignore_global
