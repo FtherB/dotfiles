@@ -4,3 +4,5 @@
 
 [includeIf "gitdir:~/prog/anc"]
     path = ~/dotfiles/config/git/.gitconfig_s255
+[core]
+	excludesfile = /Users/ftherb/dotfiles/config/git/.gitignore_global

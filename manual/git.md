@@ -1,4 +1,4 @@
-Note to self
+**Note to self**
 # committer
 
 ```

@@ -6,4 +6,4 @@ echo 'initializing mac'
 sh init_mac.sh
 
 echo 'symbolic links'
-sh 
+sh link_mac.sh
