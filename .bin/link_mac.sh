@@ -1,61 +1,50 @@
 #!/bin/bash
 
-# nvim config (directory)
-if [ -h ${HOME}/.config/nvim]; then
-    echo 'already linked: nvim'
-else
-    if [ -d ${HOME}/.config/nvim ]; then
-        rm -rf ${HOME}/.config/nvim
+link_file()
+{
+    if [ -h $2 ]; then
+        echo 'already linked: '$2
+    else
+        if [ -e $2 ]; then
+            rm -rf $2
+            echo 'removed: '$2
+        fi
+        ln -s $1 $2
+        echo 'linked: '$1
     fi
-    ln -s ~/dotfiles/nvim ~/.config/nvim
-fi
+}
+
+link_directory()
+{
+    if [ -h $2 ]; then
+        echo 'already linked: '$2
+    else
+        if [ -d $2 ]; then
+            rm -rf $2
+            echo 'removed: '$2
+        fi
+        ln -s $1 $2
+        echo 'linked: '$1
+    fi
+}
+
+# nvim
+link_directory ~/dotfiles/nvim ~/.config/nvim
 
 # .zshrc
-if [ -h ${HOME}/.zshrc ]; then
-    echo 'already linked: .zshrc'
-else
-    if [ -e ${HOME}/.zshrc]; then
-        rm -rf ${HOME}/.zshrc
-    fi
-    ln -s ~/dotfiles/config/zsh/.zshrc ~/.zshrc
-fi
+link_file ~/dotfiles/config/zsh/.zshrc ~/.zshrc
 
-# .gitconfig
-if [ -h ${HOME}/.gitconfig ]; then
-    echo 'already linked: .gitconfig'
-else
-    if [ -e ${HOME}/.gitconifg ]; then
-        rm -rf ${HOME}/.gitconifg
-    fi
-    ln -s ~/dotfiles/config/git/.gitconfig ~/.gitconfig
-fi
+# .gitconifg
+link_file ~/dotfiles/config/git/.gitconfig ~/.gitconfig
 
-# .zpofile
-if [ -h ${HOME}/.zprofile ]; then
-    echo 'already linked: .zprofile'
-else
-    if [ -e ${HOME}/.zprofile ]; then
-        rm -rf ${HOME}/.zprofile
-    fi
-    ln -s ~/dotfiles/config/zsh/.zprofile ~/.zprofile
-fi
+# .zprofile
+link_file ~/dotfiles/config/zsh/.zprofile ~/.zprofile
 
 # .latexmkrc
-if [ -h ${HOME}/.latexmkrc ]; then
-    echo 'already linked: .latexmkrc'
-else
-    if [ -e ${HOME}/.latexmkrc ]; then
-        rm -rf ${HOME}/.latexmkrc
-    fi
-    ln -s ~/dotfiles/config/.latexmkrc ~/.latexmkrc
-fi
+link_file ~/dotfiles/config/.latexmkrc ~/.latexmkrc
 
 # warp themes (directory)
-if [ -h ${HOME}/.warp ]; then
-    echo 'already linked: .warp'
-else
-    if [ -d ${HOME}/.warp ]; then
-        rm -rf ${HOME}/.warp
-    fi
-    ln -s ~/dotfiles/config/.warp ~/.warp
-fi
+link_directory ~/dotfiles/config/.warp ~/.warp
+
+# tmux config
+link_file ~/dotfiles/config/.tmux.conf ~/.tmux.conf

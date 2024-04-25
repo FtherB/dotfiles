@@ -34,6 +34,7 @@ brew install --cask inkscape
 brew install --cask thunderbird
 brew install --cask hhkb
 brew install --cask xnviewmp
+# brew install --cask astah-professional
 
 # python
 brew install pyenv
