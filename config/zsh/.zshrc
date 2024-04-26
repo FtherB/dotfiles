@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -7,6 +14,14 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
+
+# oh my zsh
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
@@ -96,13 +111,13 @@ GIT_PS1_SHOWUPSTREAM=auto
 # \$ '
 
 # show current github account
-export PROMPT="
-%F{green}[%~]%f <`git config user.name`> %F{cyan}$(__git_ps1 "(%s)")%f
-=> %# "
-RPROMPT='%*'
-
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
+# export PROMPT="
+# %F{green}[%~]%f <`git config user.name`> %F{cyan}$(__git_ps1 "(%s)")%f
+# => %# "
+# RPROMPT='%*'
+# 
+# export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/opt/curl/bin:$PATH"
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -128,3 +143,6 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/curl/lib/pkgconfig"
 export PATH="/usr/local/texlive/2024/bin/universal-dawin:$PATH"
 
 export PATH="/opt/homebrew/opt/git/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
