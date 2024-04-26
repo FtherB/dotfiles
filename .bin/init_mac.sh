@@ -31,3 +31,13 @@ bash ./install_nvim.sh
 
 # setup gitignore
 git config --global core.excludesfile ${HOME}/dotfiles/config/git/.gitignore_global
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+sh ./link_mac.sh
+
+source ~/.zshrc

@@ -48,3 +48,6 @@ link_directory ~/dotfiles/config/.warp ~/.warp
 
 # tmux config
 link_file ~/dotfiles/config/.tmux.conf ~/.tmux.conf
+
+# powerline10k
+link_file ~/dotfiles/config/zsh/.p10k.zsh ~/.p10k.zsh
