@@ -18,6 +18,8 @@ brew install node
 brew install yarn --ignore-dependencies
 brew install tmux
 brew install neofetch
+brew install rbenv
+brew install gettext libsodium lua ncurses perl“
 
 # cask
 brew install --cask warp

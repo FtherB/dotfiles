@@ -47,6 +47,14 @@ if [ -d "${NEOVIM_HOME}" ]; then
 	export PATH="${NEOVIM_HOME}/bin:$PATH"
 fi
 
+# vim PATH
+export VIM_HOME=$HOME/.local/vim
+if [ -d "${VIM_HOME}" ]; then
+    export PATH="${VIM_HOME}/bin:$PATH"
+fi
+
+export PATH="opt/homebrew/opt/ncurses/bin:$PATH"
+
 # function updatenvim(){
 #     reinstall() {
 #         sh $HOME/dotfiles/.bin/reinstall_nvim.sh

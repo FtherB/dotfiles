@@ -41,3 +41,5 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sh ./link_mac.sh
 
 source ~/.zshrc
+
+sh ./rb.sh

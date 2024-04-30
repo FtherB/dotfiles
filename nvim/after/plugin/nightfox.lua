@@ -44,3 +44,8 @@ require('nightfox').setup({
 
 -- setup must be called before loading
 vim.cmd("colorscheme nightfox")
+-- dark theme: nightfox, duskfox, nordfox, terafox, carbonfox
+-- light theme: dayfox, dawnfox
+
+-- change cursorline from highlight to underlined cursorline
+vim.api.nvim_set_hl(0, 'CursorLine', { underline = true })
