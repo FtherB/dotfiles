@@ -1,5 +1,7 @@
 " file
-set encoding=UTF-8
+set fileencodings=utf-8,sjis,iso2022-jp,enc-jp
+set encoding=utf-8
+set fileencoding=utf-8
 set autoread
 set noswapfile
 
@@ -27,6 +29,12 @@ set showmode
 set title
 set showmatch
 set novisualbell
+syntax on
+set laststatus=2
+set matchtime=1
+set ruler
+set background=dark
+set ttimeoutlen=10
 
 " clipboard
 set clipboard&
