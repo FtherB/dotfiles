@@ -51,3 +51,6 @@ link_file ~/dotfiles/config/.tmux.conf ~/.tmux.conf
 
 # powerline10k
 link_file ~/dotfiles/config/zsh/.p10k.zsh ~/.p10k.zsh
+
+# .vimrc
+link_file ~/dotfiles/config/.vimrc ~/.vimrc
