@@ -10,8 +10,16 @@ case $ID in
         sudo apt-get -y update
         sudo apt-get install -y neovim
         sudo apt-get -y upgrade
+
+        cd ${HOME}/dotfiles/.bin
+        sh ./.reinstall_nvim.sh
+        sh ./.reinstall_vim.sh
+
         ;;
     arch)
         echo 'Arch'
         ;;
 esac
+
+cd ${HOME}/dotfiles/.bin
+sh ./link.sh
