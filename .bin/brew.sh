@@ -8,9 +8,7 @@ brew install cask
 brew install octave
 brew install ffmpeg
 brew install yt-dlp
-brew install ninja
-brew install cmake
-brew install gettext
+brew install ninja cmake gettext # nvim dependencies
 brew install curl
 brew install iproute2mac
 brew install tree
@@ -19,7 +17,9 @@ brew install yarn --ignore-dependencies
 brew install tmux
 brew install neofetch
 brew install rbenv
-brew install gettext libsodium lua ncurses perl“
+brew install libsodium lua ncurses perl # vim dependencies
+brew install zsh
+brew install git
 
 # cask
 brew install --cask warp
@@ -36,13 +36,11 @@ brew install --cask inkscape
 brew install --cask thunderbird
 brew install --cask hhkb
 brew install --cask xnviewmp
+brew install --cask discord
 # brew install --cask astah-professional
 
 # python
 brew install pyenv
-pyenv install 3.11.4
-pyenv install 3.9.6
-pyenv global 3.11.4
 
 # node
 brew install node

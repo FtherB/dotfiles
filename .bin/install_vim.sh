@@ -1,6 +1,6 @@
 #!bin/sh
 
-# Reference: https://qiita.com/uhooi/items/95ffbfc1270df79f1fbd
+# Reference: https://qiita.com/uhooi/items/5bd6a3c58b2ff3eed959
 
 CURRENT_DIR=`dirname $0`
 NVIM_ROOT=${HOME}/vim/vim
@@ -22,7 +22,7 @@ make distclean
   --with-python3-command=python \
   --enable-rubyinterp=yes \
   --prefix=${HOME}/.local/vim \
-  --with-compiledby=uhooi \
+  --with-compiledby=FtherB \
   --with-tlib=ncurses \
   CFLAGS='-I/opt/homebrew/include'
 

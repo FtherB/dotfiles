@@ -54,3 +54,6 @@ link_file ~/dotfiles/config/zsh/.p10k.zsh ~/.p10k.zsh
 
 # .vimrc
 link_file ~/dotfiles/config/.vimrc ~/.vimrc
+
+# alacritty
+link_file ~/dotfiles/config/alacritty.toml ~/.config/alacritty/alacritty.toml
