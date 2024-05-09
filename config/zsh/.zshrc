@@ -1,9 +1,9 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# # Initialization code that may require console input (password prompts, [y/n]
+# # confirmations, etc.) must go above this block; everything else may go below.
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 
 ### Added by Zinit's installer
@@ -15,13 +15,13 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{160} The clone has failed.%f%b"
 fi
 
-# oh my zsh
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
+# # oh my zsh
+# export ZSH="$HOME/.oh-my-zsh"
+# 
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+# 
+# plugins=(git)
+# source $ZSH/oh-my-zsh.sh
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
@@ -87,7 +87,7 @@ alias python="python3"
 alias pip="python3 -m pip"
 
 # ls command
-alias ls='ls -a'
+alias ls='lsd -a'
 export LSCOLORS=gxfxcxdxbxGxDxabagaca
 
 # git account
@@ -154,3 +154,6 @@ export PATH="/opt/homebrew/opt/git/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# starship
+eval "$(starship init zsh)"

@@ -20,6 +20,8 @@ brew install rbenv
 brew install libsodium lua ncurses perl # vim dependencies
 brew install zsh
 brew install git
+brew install starship
+brew install lsd
 
 # cask
 brew install --cask warp
