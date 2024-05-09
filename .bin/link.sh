@@ -50,10 +50,13 @@ link_directory ~/dotfiles/config/.warp ~/.warp
 link_file ~/dotfiles/config/.tmux.conf ~/.tmux.conf
 
 # powerline10k
-link_file ~/dotfiles/config/zsh/.p10k.zsh ~/.p10k.zsh
+# link_file ~/dotfiles/config/zsh/.p10k.zsh ~/.p10k.zsh
 
 # .vimrc
 link_file ~/dotfiles/config/.vimrc ~/.vimrc
 
 # alacritty
 link_file ~/dotfiles/config/alacritty.toml ~/.config/alacritty/alacritty.toml
+
+# starship
+link_file ~/dotfiles/config/zsh/starship.toml ~/.config/starship.toml
