@@ -1,9 +1,0 @@
-.bin/init_mac.sh
-
-.bin/link_mac.sh
-
-set_defaults_mac.sh
-
-.bin/brew.sh
-
-echo 'Restart terminal.'
