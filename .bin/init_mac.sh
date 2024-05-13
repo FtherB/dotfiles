@@ -1,4 +1,5 @@
 #!/bin/bash
+# Note: root privileges will be required.
 
 # mac setup
 echo 'mac'
@@ -15,8 +16,15 @@ else
     echo 'brew already installed'
 fi
 
+# zsh setup
+brew install zsh
+sudo echo '/opt/homebrew/bin/zsh' >> /etc/shells
+rm -rf ${HOME}/.zshrc
+ln -s ~/dotfiles/config/zsh/.zshrc ~/.zshrc
+source ./.zshrc
+
 # install packages
-bash ./brew.sh
+brew dump
 
 #neovim install
 if ![ -d ${HOME}/neovim/neovim]; then
