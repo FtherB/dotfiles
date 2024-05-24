@@ -24,7 +24,7 @@ ln -s ~/dotfiles/config/zsh/.zshrc ~/.zshrc
 source ./.zshrc
 
 # install packages
-brew dump
+brew bundle
 
 #neovim install
 if ![ -d ${HOME}/neovim/neovim]; then

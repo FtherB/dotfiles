@@ -60,3 +60,6 @@ link_file ~/dotfiles/config/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # starship
 link_file ~/dotfiles/config/zsh/starship.toml ~/.config/starship.toml
+
+# wezterm config
+link_file ~/dotfiles/config/wezterm.lua ~/.wezterm.lua
