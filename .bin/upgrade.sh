@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo 'brew update'
+echo '>> brew update'
 brew update
 
-echo 'brew upgrade'
+echo '>> brew upgrade'
 brew upgrade
 
-echo 'brew cleanup'
+echo '>> brew cleanup'
 brew cleanup
