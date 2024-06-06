@@ -12,12 +12,13 @@ case $ID in
         sudo apt-get -y upgrade
 
         cd ${HOME}/dotfiles/.bin
-        sh ./.reinstall_nvim.sh
-        sh ./.reinstall_vim.sh
+        sh ./reinstall_nvim.sh
+        sh ./reinstall_vim.sh
 
         ;;
     arch)
         echo 'Arch'
+        sh ./init_arch.sh
         ;;
 esac
 
