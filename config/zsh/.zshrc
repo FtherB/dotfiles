@@ -15,6 +15,8 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{160} The clone has failed.%f%b"
 fi
 
+cowsay 'NIGHTMARE BEGINNING...'
+
 # # oh my zsh
 # export ZSH="$HOME/.oh-my-zsh"
 # 
