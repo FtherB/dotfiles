@@ -49,11 +49,11 @@ require("lazy").setup(
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'kyazdani42/nvim-web-devicons' },
-        opts = {
-            options = {
-                theme = 'nightfox',
-            },
-        },
+--        opts = {
+--            options = {
+                -- theme = 'nightfox',
+--            },
+--         },
     },
 
     {

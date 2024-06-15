@@ -13,7 +13,6 @@ vim.opt.cursorline = true
 
 -- cursor move
 
-
 -- menu
 vim.opt.wildmenu = true
 vim.opt.cmdheight = 2
@@ -40,7 +39,7 @@ vim.opt.smartindent = true
 vim.opt.number = true
 vim.opt.title = true
 vim.opt.wrap = false
-vim.opt.showtabline = 2
+vim.opt.showtabline = 0
 vim.opt.visualbell = false
 vim.opt.showmatch = true
 vim.opt.ambiwidth = 'double'
@@ -49,9 +48,9 @@ vim.opt.relativenumber = true
 -- interface
 vim.opt.winblend = 20
 vim.opt.pumblend = 20
-vim.opt.showtabline = 2
 vim.opt.signcolumn = "yes"
 vim.opt.mouse = 'a'
+vim.opt.scrolloff=10
 
 -- system
 vim.opt.ignorecase = true
@@ -59,7 +58,6 @@ vim.opt.backup = false
 vim.opt.updatetime = 300
 
 vim.o.clipboard = 'unnamedplus'
-
 
 vim.opt.whichwrap:append('b')
 vim.opt.whichwrap:append('s')

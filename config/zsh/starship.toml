@@ -51,7 +51,7 @@ format = "[ $symbol$branch ]($style)"
 symbol = " "
 
 [character]
-error_symbol = '[x](bold red) '
+error_symbol = '[x](bold red)'
 
 [cmd_duration]
 format = '[ $duration ]($style)'

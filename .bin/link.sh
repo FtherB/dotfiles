@@ -44,7 +44,7 @@ link_file ~/dotfiles/config/zsh/.zprofile ~/.zprofile
 link_file ~/dotfiles/config/.latexmkrc ~/.latexmkrc
 
 # warp themes (directory)
-link_directory ~/dotfiles/config/.warp ~/.warp
+link_directory ~/dotfiles/config/terminal/warp ~/.warp
 
 # tmux config
 link_file ~/dotfiles/config/tmux/tmux.conf ~/.tmux.conf
@@ -56,10 +56,14 @@ link_file ~/dotfiles/config/tmux/tmux.conf ~/.tmux.conf
 link_file ~/dotfiles/config/.vimrc ~/.vimrc
 
 # alacritty
-link_file ~/dotfiles/config/alacritty.toml ~/.config/alacritty/alacritty.toml
+link_file ~/dotfiles/config/terminal/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # starship
 link_file ~/dotfiles/config/zsh/starship.toml ~/.config/starship.toml
 
 # wezterm config
-link_file ~/dotfiles/config/wezterm.lua ~/.wezterm.lua
+link_file ~/dotfiles/config/terminal/wezterm.lua ~/.wezterm.lua
+
+# hyper
+link_file ~/dotfiles/config/terminal/hyper/hyper.js ~/.hyper.js
+link_directory ~/dotfiles/config/terminal/hyper/hyper_plugins ~/.hyper_plugins
