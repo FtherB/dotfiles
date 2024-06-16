@@ -1,0 +1,27 @@
+details: "lighter"
+accent: "#6db9fc"
+foreground: "#000000"
+background: "#888888"
+background_image:
+  path: ~/OneDrive/pictures/wallpapers/chino/3.jpg
+  opacity: 70
+terminal_colors:
+  bright:
+    black: "#5c5c61"
+    red: "#ff0000"
+    yellow: "#fad000"
+    cyan: "#80fcff"
+    green: "#18d902"
+    blue: "#6943ff"
+    white: "#ffffff"
+    magenta: "#8b1296"
+  normal:
+    black: "#000000"
+    green: "#11a800"
+    blue: "#7857fe"
+    red: "#ab0000"
+    yellow: "#fad000"
+    cyan: "#80fcff"
+    magenta: "#8b1296"
+    white: "#ffffff"
+
