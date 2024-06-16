@@ -1,10 +1,8 @@
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # set PIPENV behaviour to always place .venv inside the project
 export PIPENV_VENV_IN_PROJECT=true
 
 if [ `uname` = "Darwin" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
   # set op homebrew
   if [ -e /opt/homebrew ]; then
     HOMEBREW_ROOT=/opt/homebrew
@@ -22,4 +20,8 @@ if [ `uname` = "Darwin" ]; then
     eval "$(pyenv init --path)"
   fi
 
+elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
+    if [ -d /home/linuxbrew/.linuxbrew/bin ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    fi
 fi
