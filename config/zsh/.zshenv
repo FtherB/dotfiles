@@ -1,0 +1,1 @@
+export HOMEBREW_GITHUB_API_TOKEN=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
