@@ -5,15 +5,10 @@
 case $ID in
     ubuntu)
         echo 'ubuntu'
-        sudo apt-get install -y software-properties-common
-        sudo add-apt-repository -y ppa:neovim-ppa/unstable
-        sudo apt-get -y update
-        sudo apt-get install -y neovim
-        sudo apt-get -y upgrade
-
-        cd ${HOME}/dotfiles/.bin
-        sh ./reinstall_nvim.sh
-        sh ./reinstall_vim.sh
+        sudo apt update -y
+        sudo apt install -y software-properties-common
+        sudo apt -y update
+        sudo apt -y upgrade
 
         ;;
     arch)
@@ -22,5 +17,13 @@ case $ID in
         ;;
 esac
 
+# common setup
 cd ${HOME}/dotfiles/.bin
+mkdir ${HOME}/neovim
+mkdir ${HOME}/neovim/neovim
+sh ./reinstall_nvim.sh
+mkdir ${HOME}/vim
+mkdir ${HOME}/vim/vim
+sh ./reinstall_vim.sh
+
 sh ./link.sh
