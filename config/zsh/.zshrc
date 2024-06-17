@@ -129,8 +129,10 @@ GIT_PS1_SHOWUPSTREAM=auto
 # export PATH="/usr/local/sbin:$PATH"
 # export PATH="/usr/local/opt/curl/bin:$PATH"
 
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ `uname` = "Darwin" -o -d /home/linuxbrew/.linuxbrew/bin ]; then
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 # python settings
 if [ `uname` = "Darwin" ]; then

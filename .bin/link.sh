@@ -3,30 +3,32 @@
 link_file()
 {
     if [ -h $2 ]; then
-        echo 'already linked: '$2
-    else
-        if [ -e $2 ]; then
-            rm -rf $2
-            echo 'removed: '$2
-        fi
-        ln -s $1 $2
-        echo 'linked: '$1
+        unlink $2
+        echo 'link removed: '$2
+    elif [ -e $2 ]; then
+        rm -rf $2
+        echo 'removed: '$2
     fi
+    fi
+    ln -s $1 $2
+    echo 'linked: '$1
 }
 
 link_directory()
 {
     if [ -h $2 ]; then
-        echo 'already linked: '$2
-    else
-        if [ -d $2 ]; then
-            rm -rf $2
-            echo 'removed: '$2
-        fi
-        ln -s $1 $2
-        echo 'linked: '$1
+        unlink $2
+        echo 'link removed: '$2
+    elif [ -d $2 ]; then
+        rm -rf $2
+        echo 'removed: '$2
     fi
+    ln -s $1 $2
+    echo 'linked: '$1
 }
+
+
+mkdir ${HOME}/.config
 
 # nvim
 link_directory ~/dotfiles/nvim ~/.config/nvim
@@ -56,6 +58,7 @@ link_file ~/dotfiles/config/tmux/tmux.conf ~/.tmux.conf
 link_file ~/dotfiles/config/.vimrc ~/.vimrc
 
 # alacritty
+mkdir ${HOME}/.config/alacritty
 link_file ~/dotfiles/config/terminal/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # starship
