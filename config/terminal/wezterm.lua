@@ -37,7 +37,7 @@ config.background = {
 --     window:gui_window():toggle_fullscreen()
 -- end)
 
-config.initial_cols = 242
-config.initial_rows = 67
+config.initial_cols = 200
+config.initial_rows = 57
 
 return config
