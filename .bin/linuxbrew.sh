@@ -11,4 +11,5 @@ fi
 brew install zsh
 sudo echo '/home/linuxbrew/.linuxbrew/bin/zsh' >> /etc/shells
 
+brew tap Homebrew/bundle
 brew bundle

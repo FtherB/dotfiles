@@ -9,7 +9,6 @@ link_file()
         rm -rf $2
         echo 'removed: '$2
     fi
-    fi
     ln -s $1 $2
     echo 'linked: '$1
 }

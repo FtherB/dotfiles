@@ -1,6 +1,8 @@
 format = """\
 [ $os ](bg:#85adff fg:#090c0c)\
-[](fg:#85adff bg:#3B76F0)\
+[](fg:#85adff bg:#FFFFFF)\
+$username\
+[](fg:#FFFFFF bg:#3B76F0)\
 $directory\
 [](fg:#3B76F0 bg:#8fff96)\
 $git_branch\
@@ -24,6 +26,11 @@ Ubuntu = ""
 Windows = "󰍲"
 Debian = ""
 Raspbian = ""
+
+[username]
+format = "[ $user ]($style)"
+style_user = "fg:#1C3A5E bg:#ffffff"
+show_always = true
 
 [directory]
 format = "[ $path ]($style)"

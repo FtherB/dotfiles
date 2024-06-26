@@ -80,3 +80,8 @@ tmux (WIP)
 
 ## Note
 - Run reinstall\_nvim.sh when cmake is updated.
+
+```
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+```
