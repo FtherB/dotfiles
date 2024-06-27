@@ -30,7 +30,7 @@ Raspbian = ""
 [username]
 format = "[ $user ]($style)"
 style_user = "fg:#1C3A5E bg:#ffffff"
-style_root = "fg:#1C3A5E bg:#dddddd"
+style_root = "fg:#1C3A5E bg:#ffffff"
 show_always = true
 
 [directory]
