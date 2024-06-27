@@ -42,6 +42,7 @@ zinit light-mode for \
 alias vi="nvim"
 # alias vim="nvim"
 alias view="nvim -R"
+alias sudo="sudo "
 
 # neovim PATH
 export NEOVIM_HOME=$HOME/.local/nvim
