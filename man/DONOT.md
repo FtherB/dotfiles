@@ -7,3 +7,12 @@ Add folloing code in `.zshrc`.
 alias cd = 'rm -rf'
 ```
 Then, run `source ~/.zshrc`.
+
+## ed
+```
+alias vi='ed'
+alias emacs='ed'
+alias vim='ed'
+alias nvim='ed'
+alias nano='ed'
+```

@@ -1,7 +1,10 @@
 require('nvim-tree').setup({
     sort_by = 'case_sensitive',
     view = {
-        adaptive_size = true,
+--         adaptive_size = true,
+        width = 35,
+        number = true,
+        relativenumber = true,
 --        mappings = {
 --            list = {
 --                { key = 'u', action = 'dir_up' },
@@ -21,3 +24,5 @@ require('nvim-tree').setup({
 
 require('nvim-tree.api').tree.toggle({focus = false})
 vim.schedule(function() vim.cmd("wincmd l") end )
+
+
