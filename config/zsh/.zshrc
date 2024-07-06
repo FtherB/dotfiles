@@ -57,6 +57,7 @@ if [ -d "${VIM_HOME}" ]; then
 fi
 
 export PATH="opt/homebrew/opt/ncurses/bin:$PATH"
+alias wails="$HOME/go/bin/wails"
 
 # function updatenvim(){
 #     reinstall() {
@@ -153,8 +154,7 @@ export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/curl/lib/pkgconfig"
 
-export PATH="/usr/local/texlive/2024/bin/universal-dawin:$PATH"
-
+export PATH="/usr/local/texlive/2024/bin/universal-darwin:$PATH"
 export PATH="/opt/homebrew/opt/git/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -162,3 +162,60 @@ export PATH="/opt/homebrew/opt/git/bin:$PATH"
 
 # starship
 eval "$(starship init zsh)"
+
+# latexmkrc
+function latexengine() {
+    help() {
+        echo 'Usage: latexengine [platex/lualatex]'
+        return
+    }
+
+    platex() {
+        unlink ${HOME}/.latexmkrc
+        ln -s ~/dotfiles/config/latex/latexmkrc_platex ~/.latexmkrc
+        return
+    }
+
+    lualatex() {
+        unlink ${HOME}/.latexmkrc
+        ln -s ~/dotfiles/config/latex/latexmkrc_lualatex ~/.latexmkrc
+        return
+    }
+
+    uplatex() {
+        unlink ${HOME}/.latexmkrc
+        ln -s ~/dotfiles/config/latex/latexmkrc_uplatex ~/.latexmkrc
+    }
+
+    showengine(){
+        readlink ${HOME}/.latexmkrc
+    }
+
+    for engine in $*
+    do
+        case $engine in
+            help)
+                help
+                return
+                ;;
+            platex)
+                platex
+                return
+                ;;
+            lualatex)
+                lualatex
+                return
+                ;;
+            uplatex)
+                uplatex
+                return
+                ;;
+            *)
+                echo unknown argument: $engine
+                return 1
+                ;;
+        esac
+    done
+    showengine
+    return
+}
