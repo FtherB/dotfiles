@@ -17,12 +17,12 @@ config.colors = {
 config.background = {
     {
         source = {
-           File = home .. "/OneDrive/pictures/wallpapers/remram1.jpg",
+           File = home .. "/OneDrive/pictures/wallpapers/emilia/1.jpg",
            -- File = home .. "/OneDrive/pictures/wallpapers/unknown1.jpg"
         },
         repeat_x = 'NoRepeat',
         hsb = {
-            brightness = 0.3,
+            brightness = 0.15,
             saturation = 0.9,
         },
         attachment = {

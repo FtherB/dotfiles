@@ -47,3 +47,5 @@ sh ./link.sh
 source ~/.zshrc
 
 sh ./rb.sh
+
+defaults write com.google.Chrome ExtensionManifestV2Availability 2

@@ -59,6 +59,8 @@ fi
 export PATH="opt/homebrew/opt/ncurses/bin:$PATH"
 alias wails="$HOME/go/bin/wails"
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # function updatenvim(){
 #     reinstall() {
 #         sh $HOME/dotfiles/.bin/reinstall_nvim.sh
@@ -165,57 +167,30 @@ eval "$(starship init zsh)"
 
 # latexmkrc
 function latexengine() {
+    sh ${HOME}/dotfiles/.bin/latexengine.sh $1
+}
+
+function makereport() {
     help() {
-        echo 'Usage: latexengine [platex/lualatex]'
-        return
+        echo "Usage: makereport [directory_name]"
     }
-
-    platex() {
-        unlink ${HOME}/.latexmkrc
-        ln -s ~/dotfiles/config/latex/latexmkrc_platex ~/.latexmkrc
-        return
-    }
-
-    lualatex() {
-        unlink ${HOME}/.latexmkrc
-        ln -s ~/dotfiles/config/latex/latexmkrc_lualatex ~/.latexmkrc
-        return
-    }
-
-    uplatex() {
-        unlink ${HOME}/.latexmkrc
-        ln -s ~/dotfiles/config/latex/latexmkrc_uplatex ~/.latexmkrc
-    }
-
-    showengine(){
-        readlink ${HOME}/.latexmkrc
-    }
-
-    for engine in $*
+    for dir in $*
     do
-        case $engine in
+        case $dir in
             help)
                 help
                 return
                 ;;
-            platex)
-                platex
-                return
-                ;;
-            lualatex)
-                lualatex
-                return
-                ;;
-            uplatex)
-                uplatex
-                return
-                ;;
             *)
-                echo unknown argument: $engine
-                return 1
+                sh ${HOME}/dotfiles/.bin/makereport.sh $dir
+                return
                 ;;
         esac
     done
-    showengine
-    return
+    help
+    return 1
+}
+
+function fortunef() {
+    sh ${HOME}/dotfiles/.bin/fortunef.sh
 }

@@ -11,7 +11,7 @@ x = 0
 y = 0
 
 [font.normal]
-family = "MesloLGS NF"
+family = "Hack Nerd Font Mono"
 
 [font.offset]
 x = 0
@@ -26,4 +26,30 @@ args = [
 ]
 
 [window]
-opacity = 0.8
+opacity = 1
+
+[colors.normal]
+black = "#181818"
+red = "#fc4a4f"
+green = "#00cf40"
+yellow = "#cdcd38"
+blue = "#0a2fc4"
+magenta = "#c939c4"
+cyan = "#5bcdcb"
+white = "#d8d8d8"
+
+[colors.bright]
+black = "#6b6b6b"
+red = "#ff414c"
+green = "#00ff26"
+yellow = "#ffff05"
+blue = "#6a76fb"
+magenta = "#fd7cfc"
+cyan = "#00ffff"
+white = "#f8f8f8"
+
+[colors.primary]
+background = "#000000"
+
+[colors]
+cursor = { text = "#181818", cursor = "#03dcfc" }
