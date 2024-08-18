@@ -53,3 +53,6 @@ background = "#000000"
 
 [colors]
 cursor = { text = "#181818", cursor = "#03dcfc" }
+
+[mouse]
+hide_when_typing = true
