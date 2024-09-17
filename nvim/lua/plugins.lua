@@ -67,16 +67,16 @@ require("lazy").setup(
       ft = { "markdown" }
     },
 
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-        },
-        enabled = false,
-    },
+--     {
+--         "nvim-neo-tree/neo-tree.nvim",
+--         branch = "v3.x",
+--         dependencies = {
+--             "nvim-lua/plenary.nvim",
+--             "nvim-tree/nvim-web-devicons",
+--             "MunifTanjim/nui.nvim",
+--         },
+--         enabled = false,
+--     },
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
