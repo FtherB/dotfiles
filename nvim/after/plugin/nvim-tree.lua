@@ -22,7 +22,7 @@ require('nvim-tree').setup({
     },
 })
 
-require('nvim-tree.api').tree.toggle({focus = false})
-vim.schedule(function() vim.cmd("wincmd l") end )
+-- require('nvim-tree.api').tree.toggle({focus = false})
+-- vim.schedule(function() vim.cmd("wincmd l") end )
 
 

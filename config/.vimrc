@@ -29,7 +29,7 @@ set showmode
 set title
 set showmatch
 set novisualbell
-syntax on
+" syntax on
 set laststatus=2
 set matchtime=1
 set ruler

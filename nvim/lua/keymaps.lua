@@ -2,6 +2,7 @@ local km = vim.keymap
 -- nvim-tree
 km.set('n','<leader>nt','<cmd>NvimTreeToggle<CR>')
 km.set('n','<leader>nf','<cmd>NvimTreeFindFile<CR>')
+km.set('n','<leader>nn','<cmd>NvimTreeToggle<CR>')
 
 -- telescope
 local builtin = require('telescope.builtin')

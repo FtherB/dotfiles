@@ -1,7 +1,9 @@
 #!/bin/bash
 
 help() {
-    echo 'Usage: latexengine [platex/lualatex]'
+    echo 'Usage: latexengine [engine_name]'
+    echo 'Available: platex/uplatex/pdflatex/lualatex'
+    echo 'If no argument is given, display the current engine'
     return
 }
 
@@ -28,7 +30,8 @@ pdflatex() {
 }
 
 showengine(){
-    readlink ${HOME}/.latexmkrc
+    res=$(readlink ${HOME}/.latexmkrc)
+    echo ${res##*latexmkrc_}
 }
 
 for engine in $*
@@ -38,19 +41,19 @@ do
             help
             exit 0
             ;;
-        platex)
+        platex | p)
             platex
             exit 0
             ;;
-        lualatex)
+        lualatex | lua)
             lualatex
             exit 0
             ;;
-        uplatex)
+        uplatex | up)
             uplatex
             exit 0
             ;;
-        pdflatex)
+        pdflatex | pdf)
             pdflatex
             exit 0
             ;;
