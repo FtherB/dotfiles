@@ -123,6 +123,7 @@ require("lazy").setup(
     },
     {
         "mbbill/undotree",
+        enabled = false,
     },
     {
         "lervag/vimtex",
