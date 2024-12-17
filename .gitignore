@@ -2,3 +2,6 @@
 nvim/lazy-lock.json
 config/zsh/.zshenv
 .bin/fortunef.sh
+config/zsh/api/*
+
+*.log

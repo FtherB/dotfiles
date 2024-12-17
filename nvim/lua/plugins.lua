@@ -120,6 +120,7 @@ require("lazy").setup(
         config = function()
             require("im_select").setup({})
         end,
+        enabled = false,
     },
     {
         "mbbill/undotree",
@@ -132,6 +133,15 @@ require("lazy").setup(
         init = function()
             vim.g.vimtex_view_method = 'skim'
         end,
+    },
+    {
+        "oflisback/obsidian-bridge.nvim",
+        lazy = true,
+        enabled = false,
+        ft = { "markdown" },
+        opts = {
+            { scroll_sync = true },
+        },
     },
 },
 -- lazy options
