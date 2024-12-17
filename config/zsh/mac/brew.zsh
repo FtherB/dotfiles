@@ -1,4 +1,4 @@
-export PATH="opt/homebrew/opt/ncurses/bin:$PATH"
+export PATH="/opt/homebrew/opt/ncurses/bin:$PATH"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 

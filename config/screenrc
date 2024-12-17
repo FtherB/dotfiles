@@ -1,0 +1,23 @@
+defutf8 on
+defencoding utf8
+encoding utf8 utf8
+
+startup_message off
+vbell off
+
+# prefix c-j
+escape ^Jj
+
+# term "xterm-256color"
+
+defscrollback 3000
+
+autodetach on
+
+bind j focus
+bind k focus up
+bind s eval split focus "select 0"
+# bind v split v
+#
+hardstatus alwayslastline
+hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%Y/%m/%d %{= Kc} %C%A%{-}'

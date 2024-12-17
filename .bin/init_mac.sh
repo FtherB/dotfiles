@@ -37,6 +37,9 @@ fi
 
 bash ./reinstall_nvim.sh
 
+# starship
+bash ./install_starship.sh -y
+
 # setup gitignore
 git config --global core.excludesfile ${HOME}/dotfiles/config/git/.gitignore_global
 

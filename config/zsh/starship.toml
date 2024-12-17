@@ -1,6 +1,8 @@
 format = """\
-[ $os ](bg:#85adff fg:#090c0c)\
-[](fg:#85adff bg:#FFFFFF)\
+[ $os ](bg:#6696ff fg:#090c0c)\
+[](fg:#6696ff bg:#adc7ff)\
+$hostname\
+[](fg:#adc7ff bg:#FFFFFF)\
 $username\
 [](fg:#FFFFFF bg:#3B76F0)\
 $directory\
@@ -26,6 +28,12 @@ Ubuntu = ""
 Windows = "󰍲"
 Debian = ""
 Raspbian = ""
+
+[hostname]
+format = "[ $ssh_symbol$hostname ]($style)"
+style = "fg:#1C3A5E bg:#adc7ff"
+disabled=false
+ssh_only=false
 
 [username]
 format = "[ $user ]($style)"
@@ -59,7 +67,8 @@ format = "[ $symbol$branch ]($style)"
 symbol = " "
 
 [character]
-error_symbol = '[x](bold red)'
+success_symbol = '[\(> <\) <](bold green)'
+error_symbol = '[\(; ;\) <](bold red)'
 
 [cmd_duration]
 format = '[ $duration ]($style)'
