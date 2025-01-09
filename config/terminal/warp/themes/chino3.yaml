@@ -3,7 +3,7 @@ accent: "#6db9fc"
 foreground: "#000000"
 background: "#888888"
 background_image:
-  path: ~/OneDrive/pictures/wallpapers/chino/3.jpg
+  path: ~wallpapers/chino/3.jpg
   opacity: 70
 terminal_colors:
   bright:

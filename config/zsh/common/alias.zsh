@@ -18,3 +18,8 @@ export LSCOLORS=gxfxcxdxbxGxDxabagaca
 alias globalip="curl ipecho.net/plain; echo"
 
 alias tree='cmd="command tree -a -I .git -I .DS_Store"; echo $cmd; eval ${cmd}'
+
+
+. "$HOME/.cargo/env"
+
+export PATH="${HOME}/.local/apps:$PATH"
