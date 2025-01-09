@@ -3,7 +3,7 @@ accent: "#fff300"
 foreground: "#ffffff"
 background: "#191830"
 background_image:
-  path: ~/OneDrive/pictures/wallpapers/kimono.jpg
+  path: ~/wallpapers/kimono.jpg
   opacity: 40
 terminal_colors:
   bright:

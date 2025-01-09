@@ -17,7 +17,7 @@ config.colors = {
 config.background = {
     {
         source = {
-           File = home .. "/OneDrive/pictures/wallpapers/emilia/1.jpg",
+           File = home .. "/wallpapers/emilia/1.jpg",
            -- File = home .. "/OneDrive/pictures/wallpapers/unknown1.jpg"
         },
         repeat_x = 'NoRepeat',

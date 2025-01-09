@@ -3,7 +3,7 @@ accent: "#fff300"
 foreground: "#ffffff"
 background: "#031c29"
 background_image:
-  path: ~/OneDrive/pictures/wallpapers/milky_mountain.jpg
+  path: ~/wallpapers/milky_mountain.jpg
   opacity: 40
 terminal_colors:
   bright:
