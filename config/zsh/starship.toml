@@ -6,7 +6,9 @@ $hostname\
 $username\
 [](fg:#FFFFFF bg:#3B76F0)\
 $directory\
-[](fg:#3B76F0 bg:#8fff96)\
+[](fg:#3B76F0 bg:#00507A)\
+$python\
+[](fg:#00507A bg:#8fff96)\
 $git_branch\
 $git_status\
 $git_metrics\
@@ -46,6 +48,10 @@ format = "[ $path ]($style)"
 style = "fg:#E4E4E4 bg:#3B76F0"
 truncation_length = 15
 truncate_to_repo = false
+
+[python]
+format = '[ ${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "fg:#E4E4E4 bg:#00507A"
 
 [git_branch]
 format = '[ $symbol$branch(:$remote_branch) ]($style)'

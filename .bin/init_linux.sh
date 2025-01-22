@@ -27,3 +27,7 @@ mkdir ${HOME}/vim/vim
 sh ./reinstall_vim.sh
 
 sh ./link.sh
+
+# if go packages cannot be installed, try:
+# go env -w GOPROXY=direct
+# go env -w GOSUMDB=off
