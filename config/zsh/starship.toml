@@ -50,7 +50,7 @@ truncation_length = 15
 truncate_to_repo = false
 
 [python]
-format = '[ ${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+format = '[ py:${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 style = "fg:#E4E4E4 bg:#00507A"
 
 [git_branch]
@@ -73,8 +73,10 @@ format = "[ $symbol$branch ]($style)"
 symbol = " "
 
 [character]
-success_symbol = '[\(> <\) <](bold green)'
-error_symbol = '[\(; ;\) <](bold red)'
+format = '$symbol'
+success_symbol = '[\(> <\)](bold green)[ ❯ ](green)'
+error_symbol = '[\(; ;\)](bold red)[ ❯ ](green)'
+vimcmd_symbol = '[\(? ?\)](bold white)[ ❯ ](#ADC7FF)'
 
 [cmd_duration]
 format = '[ $duration ]($style)'

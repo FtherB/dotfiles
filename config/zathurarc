@@ -1,0 +1,12 @@
+# window size
+set window-height 1000
+set window-width 1500
+
+# zoom default
+set zoom-step 20
+
+set incremental-search true
+
+set selection-clipboard clipboard
+
+map x quit

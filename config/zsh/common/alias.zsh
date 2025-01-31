@@ -12,14 +12,15 @@ alias pytnon="python3"
 alias pip="python3 -m pip"
 
 # ls
-alias ls="lsd -a"
+alias ls="lsd"
 export LSCOLORS=gxfxcxdxbxGxDxabagaca
 
 alias globalip="curl ipecho.net/plain; echo"
 
 alias tree='cmd="command tree -a -I .git -I .DS_Store"; echo $cmd; eval ${cmd}'
 
-
-. "$HOME/.cargo/env"
+if [ -d ${HOME}/.cargo ]; then
+    . "$HOME/.cargo/env"
+fi
 
 export PATH="${HOME}/.local/apps:$PATH"
