@@ -6,4 +6,4 @@ config/zsh/api/*
 
 *.log
 
-/config/zsh/common/git.zsh
+config/zsh/common/git.zsh
