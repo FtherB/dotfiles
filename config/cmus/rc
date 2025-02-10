@@ -1,0 +1,7 @@
+set format_current= %t | %a | %l
+
+set scroll_offset=10
+
+# c-x: next window
+bind -f common ^W win-next 
+

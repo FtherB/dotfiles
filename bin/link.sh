@@ -27,7 +27,7 @@ link_directory()
 }
 
 
-mkdir ${HOME}/.config
+mkdir -p ${HOME}/.config
 
 # nvim
 link_directory ~/dotfiles/nvim ~/.config/nvim
@@ -57,7 +57,7 @@ link_file ~/dotfiles/config/tmux/tmux.conf ~/.tmux.conf
 link_file ~/dotfiles/config/.vimrc ~/.vimrc
 
 # alacritty
-mkdir ${HOME}/.config/alacritty
+mkdir -p ${HOME}/.config/alacritty
 link_file ~/dotfiles/config/terminal/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # starship
@@ -69,3 +69,14 @@ link_file ~/dotfiles/config/terminal/wezterm.lua ~/.wezterm.lua
 # hyper
 link_file ~/dotfiles/config/terminal/hyper/hyper.js ~/.hyper.js
 link_directory ~/dotfiles/config/terminal/hyper/hyper_plugins ~/.hyper_plugins
+
+# zathura
+mkdir -p ${HOME}/.config/zathura
+link_file ~/dotfiles/config/zathurarc ~/.config/zathura/zathurarc
+
+# vifm
+link_directory ~/dotfiles/config/vifm ~/.config/vifm
+
+# cmus
+mkdir -p ${HOME}/.config/cmus
+link_file ~/dotfiles/config/cmus/rc ~/.config/cmus/rc
