@@ -22,6 +22,7 @@ if [ `uname` = "Darwin" ]; then
 
 elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
     if [ -d /home/linuxbrew/.linuxbrew/bin ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        ulimit -n 65535
     fi
 fi

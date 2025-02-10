@@ -15,6 +15,10 @@ km.set('n','<leader>tt', '<cmd>Telescope<CR>')
 km.set('n','<leader>l','<cmd>Lazy<CR>')
 km.set('n','<leader>m','<cmd>Mason<CR>')
 
+-- other keymaps
+km.set({'n','v'},'<leader>f','^')
+km.set({'n','v'},'<leader>e','$')
+
 -- other systems
 -- split windows
 -- move active window

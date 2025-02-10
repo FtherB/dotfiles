@@ -7,6 +7,7 @@ vim.opt.swapfile = false
 vim.opt.helplang = "en"
 vim.opt.hidden = true
 vim.opt.autoread = true
+vim.opt.autowriteall=true
 
 -- cursor and view
 vim.opt.cursorline = true
