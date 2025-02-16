@@ -1,4 +1,7 @@
 local km = vim.keymap
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 -- nvim-tree
 km.set('n','<leader>nt','<cmd>NvimTreeToggle<CR>')
 km.set('n','<leader>nf','<cmd>NvimTreeFindFile<CR>')
@@ -12,12 +15,12 @@ km.set('n','<leader>tb', builtin.buffers, {})
 km.set('n','<leader>th', builtin.help_tags, {})
 km.set('n','<leader>tt', '<cmd>Telescope<CR>')
 
-km.set('n','<leader>l','<cmd>Lazy<CR>')
-km.set('n','<leader>m','<cmd>Mason<CR>')
+km.set('n','<localleader>l','<cmd>Lazy<CR>')
+km.set('n','<localleader>m','<cmd>Mason<CR>')
 
 -- other keymaps
-km.set({'n','v'},'<leader>f','^')
-km.set({'n','v'},'<leader>e','$')
+km.set({'n','v','o'},'<leader>h','^')
+km.set({'n','v','o'},'<leader>l','$')
 
 -- other systems
 -- split windows
@@ -36,5 +39,7 @@ wk.add({
     { "<leader>tb", desc = "buffers"},
     { "<leader>th", desc = "help_tags"},
     { "<leader>n", group = "Nvim-Tree"},
+    { "<leader>h", desc = "Start of line (non ws)"},
+    { "<leader>l", desc = "End of line"},
 })
 wk.setup()

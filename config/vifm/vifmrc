@@ -356,6 +356,7 @@ nnoremap <space> :!open %f<cr>
 nnoremap st :set sort=-mtime<cr>
 nnoremap sn :set sort=iname<cr>
 nnoremap r :rename<space>
+nnoremap cm cp
 
 " create file or directory: if last characters is /, directory will be created
 nnoremap a :create<space>

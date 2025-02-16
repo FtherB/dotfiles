@@ -69,8 +69,6 @@ vim.opt.whichwrap:append('>')
 vim.opt.whichwrap:append('[')
 vim.opt.whichwrap:append(']')
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 -- vim.keymap.set('n','<Leader>a',"<cmd>echo 'hello'<CR>")
 --

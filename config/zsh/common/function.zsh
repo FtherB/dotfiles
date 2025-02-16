@@ -1,6 +1,6 @@
 # latexmkrc
 function latexengine() {
-    sh ${HOME}/dotfiles/.bin/latexengine.sh $1
+    sh ${HOME}/dotfiles/bin/latexengine.sh $1
 }
 
 function makereport() {
@@ -15,15 +15,11 @@ function makereport() {
                 return
                 ;;
             *)
-                sh ${HOME}/dotfiles/.bin/makereport.sh $dir
+                sh ${HOME}/dotfiles/bin/makereport.sh $dir
                 return
                 ;;
         esac
     done
     help
     return 1
-}
-
-function fortunef() {
-    sh ${HOME}/dotfiles/.bin/fortunef.sh
 }
