@@ -38,7 +38,12 @@ function vf() {
 }
 
 function zt() {
-    if [ ! -e $1 ]; then
+    if [ -z "$1" ]; then
+        echo "invalid argument"
+        echo "Usage: zt filename"
+        echo "for more details: zathura --help or man zathura"
+        return 1
+    elif [ ! -e $1 ]; then
         echo "cannot open: $1"
         return 1
     fi
