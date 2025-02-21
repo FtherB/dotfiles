@@ -66,7 +66,7 @@ command! reload :write | restart full
 "        \ open -a Skim.app,
 " fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
 
-filetype *.pdf nohup zathura >/dev/null 2>&1 &
+filetype *.pdf nohup zathura > /dev/null 2>&1 &
 
 " PostScript
 filetype {*.ps,*.eps,*.ps.gz},<application/postscript> open -a Preview.app
@@ -78,12 +78,8 @@ filetype {*.djvu},<image/vnd.djvu> open -a MacDjView.app
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,
          \*.aac,*.mpga},
         \<audio/*>
-       \ {Open in Music}
-       \ open -a Music.app,
        \ {Open in QuickTime Player}
        \ open -a QuickTime\ Player.app,
-       \ {Open in IINA}
-       \ open -a IINA.app,
 fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,
            \*.aac,*.mpga},
           \<audio/*>
@@ -108,12 +104,6 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 
 " Web
 filetype {*.xhtml,*.html,*.htm},<text/html>
-       \ {Open in Safari}
-       \ open -a Safari.app,
-       \ {Open in Firefox}
-       \ open -a Firefox.app,
-       \ {Open in Chrome}
-       \ open -a Google\ Chrome.app,
        \ {Open in vim}
        \ vim,
 fileviewer {*.xhtml,*.html,*.htm},<text/html> w3m -dump -T text/html
@@ -126,10 +116,13 @@ filetype {*.[1-8]},<text/troff> man ./%c
 fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 
 " Image
-filetype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-       \ open -a Preview.app,
-fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ identify %f
+ filetype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+        \ nohup vimiv > /dev/null 2>&1 &
+" fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+"          \ identify %f
+
+fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm} nohup vimiv > /dev/null 2>&1 &
+
 
 " MD5
 filetype *.md5
