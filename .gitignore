@@ -11,3 +11,5 @@ config/zsh/common/git.zsh
 config/vifm/vifm-help.txt
 config/vifm/vifminfo.json
 config/vifm/colors/Default.vifm
+
+config/git_config
