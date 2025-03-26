@@ -9,4 +9,6 @@ set incremental-search true
 
 set selection-clipboard clipboard
 
+set database sqlite
+
 map x quit
