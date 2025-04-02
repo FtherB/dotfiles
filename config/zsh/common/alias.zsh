@@ -38,7 +38,11 @@ function vf() {
 }
 
 function zt() {
-    if [ -z "$1" ]; then
+    if [ `uname` = "Darwin" ] && [ "$1" = "-r" ]; then
+        echo "Reinstall zathura-pdf-mupdf"
+        brew reinstall zegervdv/zathura/zathura-pdf-mupdf
+        return 0
+    elif [ -z "$1" ]; then
         echo "invalid argument"
         echo "Usage: zt filename"
         echo "for more details: zathura --help or man zathura"
