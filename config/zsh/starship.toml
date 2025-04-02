@@ -1,8 +1,6 @@
 format = """\
 [ $os ](bg:#6696ff fg:#090c0c)\
-[](fg:#6696ff bg:#adc7ff)\
-$hostname\
-[](fg:#adc7ff bg:#FFFFFF)\
+[](fg:#6696ff bg:#FFFFFF)\
 $username\
 [](fg:#FFFFFF bg:#3B76F0)\
 $directory\
