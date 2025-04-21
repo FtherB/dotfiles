@@ -3,8 +3,8 @@
 echo '>> brew update'
 brew update
 
-echo '>> brew upgrade'
+echo '\n>> brew upgrade'
 brew upgrade
 
-echo '>> brew cleanup'
+echo '\n>> brew cleanup'
 brew cleanup

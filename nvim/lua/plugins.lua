@@ -26,7 +26,7 @@ require("lazy").setup(
         lazy = true,
         cmd = "Telescope",
     },
-    
+
     -- LSP
     'neovim/nvim-lspconfig',
     'williamboman/mason.nvim',
@@ -45,7 +45,7 @@ require("lazy").setup(
         event = "insertEnter",
         config = true,
     },
-        
+
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'kyazdani42/nvim-web-devicons' },
@@ -80,7 +80,6 @@ require("lazy").setup(
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
-        lazy = false,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
@@ -128,6 +127,7 @@ require("lazy").setup(
     },
     {
         "lervag/vimtex",
+        enabled = false,
         lazy = true,
         ft = { "tex" },
         init = function()
@@ -142,6 +142,12 @@ require("lazy").setup(
         opts = {
             { scroll_sync = true },
         },
+    },
+
+    {
+        "github/copilot.vim",
+        lazy = true,
+        cmd = { "Copilot", "Copilot setup" },
     },
 },
 -- lazy options

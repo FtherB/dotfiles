@@ -14,11 +14,13 @@ config.colors = {
     cursor_border = "#88d8fc"
 }
 
+
 config.background = {
     {
         source = {
-           File = home .. "/wallpapers/emilia/1.jpg",
+           -- File = home .. "/wallpapers/emilia/1.jpg",
            -- File = home .. "/OneDrive/pictures/wallpapers/unknown1.jpg"
+           File = home .. "/wallpapers/nightcity_4k.jpg"
         },
         repeat_x = 'NoRepeat',
         hsb = {
