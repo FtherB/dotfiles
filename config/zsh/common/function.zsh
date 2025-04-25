@@ -23,3 +23,11 @@ function makereport() {
     help
     return 1
 }
+
+# mkdir and cd
+function mkd() {
+    {
+        mkdir -p $1
+        builtin cd $1
+    }
+}
