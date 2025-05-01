@@ -66,6 +66,15 @@ require("lazy").setup(
       lazy = true,
       ft = { "markdown" }
     },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+        lazy = true,
+        ft = { "markdown" },
+    },
 
 --     {
 --         "nvim-neo-tree/neo-tree.nvim",
@@ -148,6 +157,14 @@ require("lazy").setup(
         "github/copilot.vim",
         lazy = true,
         cmd = { "Copilot", "Copilot setup" },
+    },
+
+    {
+        "monaqa/dial.nvim",
+    },
+
+    {
+        "lewis6991/gitsigns.nvim",
     },
 },
 -- lazy options
