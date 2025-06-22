@@ -22,6 +22,10 @@ km.set('n','<localleader>m','<cmd>Mason<CR>')
 km.set({'n','v','o'},'<leader>h','^')
 km.set({'n','v','o'},'<leader>l','$')
 
+-- markdown
+km.set('n','<leader>mp','<cmd>MarkdownPreviewToggle<CR>')
+km.set('n','<leader>mr','<cmd>RenderMarkdown toggle<CR>')
+
 -- other systems
 -- split windows
 -- move active window
@@ -41,5 +45,6 @@ wk.add({
     { "<leader>n", group = "Nvim-Tree"},
     { "<leader>h", desc = "Start of line (non ws)"},
     { "<leader>l", desc = "End of line"},
+    { "<leader>m", group = "Markdown plugins"}
 })
 wk.setup()

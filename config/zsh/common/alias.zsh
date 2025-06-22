@@ -10,6 +10,7 @@ alias wails="$HOME/go/bin/wails"
 # python
 alias pytnon="python3"
 alias pip="python3 -m pip"
+alias py="python3"
 
 # ls
 alias ls="lsd"

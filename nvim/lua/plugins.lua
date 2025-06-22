@@ -29,9 +29,13 @@ require("lazy").setup(
 
     -- LSP
     'neovim/nvim-lspconfig',
-    'williamboman/mason.nvim',
     {
-        'williamboman/mason-lspconfig.nvim',
+        'mason-org/mason.nvim',
+        version = "^1.0.0",
+    },
+    {
+        'mason-org/mason-lspconfig.nvim',
+        version = "^1.0.0",
 
     },
 
@@ -165,6 +169,17 @@ require("lazy").setup(
 
     {
         "lewis6991/gitsigns.nvim",
+    },
+
+    -- debug plugins
+    {
+        "rcarriga/nvim-dap-ui",
+        enabled = false,
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+            { "theHamsta/nvim-dap-virtual-text", opts = {}}
+        },
     },
 },
 -- lazy options

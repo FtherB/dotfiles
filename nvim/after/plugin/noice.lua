@@ -1,3 +1,15 @@
+local function notshow(pattern)
+    return {
+        filter = {
+            event = "msg_show",
+            find = pattern,
+            opts = {
+                skip = true,
+            },
+        },
+    }
+end
+
 require("noice").setup({
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -15,4 +27,10 @@ require("noice").setup({
     inc_rename = false, -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = false, -- add a border to hover docs and signature help
   },
+  routes = {
+        notshow("deprecated"),
+        notshow("border chars must be one call"),
+  },
 })
+
+

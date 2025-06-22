@@ -36,7 +36,7 @@ link_directory ~/dotfiles/nvim ~/.config/nvim
 link_file ~/dotfiles/config/zsh/.zshrc ~/.zshrc
 
 # .gitconifg
-link_file ~/dotfiles/config/git/.gitconfig ~/.gitconfig
+link_file ~/dotfiles/config/git_config/.gitconfig ~/.gitconfig
 
 # .zprofile
 link_file ~/dotfiles/config/zsh/.zprofile ~/.zprofile
@@ -64,7 +64,7 @@ link_file ~/dotfiles/config/terminal/alacritty.toml ~/.config/alacritty/alacritt
 link_file ~/dotfiles/config/zsh/starship.toml ~/.config/starship.toml
 
 # wezterm config
-link_file ~/dotfiles/config/terminal/wezterm.lua ~/.wezterm.lua
+link_directory ~/dotfiles/config/terminal/wezterm ~/.config/wezterm
 
 # hyper
 link_file ~/dotfiles/config/terminal/hyper/hyper.js ~/.hyper.js
