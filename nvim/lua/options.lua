@@ -26,7 +26,7 @@ vim.opt.incsearch = true
 vim.opt.matchtime = 1
 
 --colorscheme
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
 -- indent

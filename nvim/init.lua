@@ -4,3 +4,4 @@ require("keymaps")
 -- require("indent")
 
 require("lsps")
+require("tmux")

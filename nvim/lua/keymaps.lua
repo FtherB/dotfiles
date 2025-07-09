@@ -2,6 +2,14 @@ local km = vim.keymap
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- c-h/j/k/l as arrowas arrow in insert mode
+km.set('i','<C-h>','<Left>')
+km.set('i','<C-j>','<Down>')
+km.set('i','<C-k>','<Up>')
+km.set('i','<C-l>','<Right>')
+
+km.set('i','<C-b>','<BS>')
+
 -- nvim-tree
 km.set('n','<leader>nt','<cmd>NvimTreeToggle<CR>')
 km.set('n','<leader>nf','<cmd>NvimTreeFindFile<CR>')

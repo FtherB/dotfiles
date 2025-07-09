@@ -24,6 +24,28 @@ function makereport() {
     return 1
 }
 
+function makemarp() {
+    help() {
+        echo "Usage: makemarp [directory_name]"
+    }
+    for dir in $*
+    do
+        case $dir in
+            help)
+                help
+                return
+                ;;
+            *)
+                sh ${HOME}/dotfiles/bin/makemarp.sh $dir
+                builtin cd $dir
+                return
+                ;;
+        esac
+    done
+    help
+    return 1
+}
+
 # mkdir and cd
 function mkd() {
     {

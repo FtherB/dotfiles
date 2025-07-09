@@ -4,7 +4,12 @@ local config = {}
 
 config.enable_tab_bar = false
 
-config.font = wezterm.font 'Hack Nerd Font Mono'
+config.term = "xterm-256color"
+
+config.font = wezterm.font 'HackGen35 Console NF'
+
+config.allow_square_glyphs_to_overflow_width = 'Never'
+-- config.assume_emoji_double_width = true
 
 config.colors = {
     cursor_bg = "#88d8fc",
