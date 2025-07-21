@@ -43,3 +43,7 @@ set clipboard^=unnamedplus
 set nocompatible
 set whichwrap=b,s,h,l,<,>,[,],~
 set backspace=indent,eol,start
+
+set foldmethod=syntax
+let perl_fold=1
+set foldlevel=100

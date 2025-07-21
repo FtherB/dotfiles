@@ -75,3 +75,9 @@ vim.opt.whichwrap:append(']')
 --language
 vim.opt.langmenu='en_US.UTF-8'
 vim.api.nvim_exec('language message en_US.UTF-8', true)
+
+-- powerline width
+vim.fn.setcellwidths {
+    { 0xe0b0, 0xe0d4, 1},
+    { 0xe0a0, 0xe0a3, 1},
+}

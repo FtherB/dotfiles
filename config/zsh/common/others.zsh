@@ -1,3 +1,6 @@
+# language setting
+export LANG=en_US.UTF-8
+
 # starship
 export PATH="${HOME}/.local/starship:$PATH"
 eval "$(starship init zsh)"

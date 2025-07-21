@@ -1,23 +1,28 @@
 {
-    "description":"c-[ to Escape",
-    "manipulators": [
+    "title": "control + [ (open bracket) to escape",
+    "rules": [
         {
-            "type": "basic",
-            "from": {
-                "key_code": "open_bracket",
-                "modifiers": {
-                    "mandatory": [
-                        "control"
-                    ],
-                    "optional": [
-                        "caps_lock",
-                        "option"
-                    ]
-                }
-            },
-            "to": [
+            "description":"c-[ to Escape",
+            "manipulators": [
                 {
-                    "key_code": "escape"
+                    "type": "basic",
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ],
+                            "optional": [
+                                "caps_lock",
+                                "option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ]
                 }
             ]
         }

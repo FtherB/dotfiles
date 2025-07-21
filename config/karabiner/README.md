@@ -1,1 +1,1 @@
-# Karabiner- Elements Complex Modifications
+# Karabiner Elements Complex Modifications

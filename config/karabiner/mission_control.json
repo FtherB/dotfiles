@@ -1,13 +1,54 @@
 {
-  "title": "c-h/j/k/l to arrow keys",
+  "title": "Mission Control and Desktop Switching (C-w/n/p)",
   "rules": [
     {
-      "description": "Use C-h/j/k/l as arrow keys (Vim-style)",
+      "description": "C-w to Mission Control",
       "manipulators": [
         {
           "type": "basic",
-          "from": { "key_code": "h", "modifiers": { "mandatory": ["control"] } },
-          "to": [{ "key_code": "left_arrow" }]
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": ["control"]
+            }
+          ],
+          "conditions": [
+              {
+                  "type": "frontmost_application_unless",
+                  "bundle_identifiers": [
+                      "^com\\.github\\.wez\\.wezterm$"
+                  ],
+                  "file_paths": [
+                      "/Users/ftherb/build_apps/alacritty/target/release/alacritty"
+                  ]
+              }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "C-n,C-p to siwtch desktop",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": ["control"]
+            }
+          ],
           "conditions": [
               {
                   "type": "frontmost_application_unless",
@@ -22,40 +63,18 @@
         },
         {
           "type": "basic",
-          "from": { "key_code": "j", "modifiers": { "mandatory": ["control"] } },
-          "to": [{ "key_code": "down_arrow" }]
-          "conditions": [
-              {
-                  "type": "frontmost_application_unless",
-                  "bundle_identifiers": [
-                      "^com\\.github\\.wez\\.wezterm$"
-                  ],
-                  "file_paths": [
-                      "/Users/ftherb/build_apps/alacritty/target/release/alacritty"
-                  ]
-              }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": { "key_code": "k", "modifiers": { "mandatory": ["control"] } },
-          "to": [{ "key_code": "up_arrow" }]
-          "conditions": [
-              {
-                  "type": "frontmost_application_unless",
-                  "bundle_identifiers": [
-                      "^com\\.github\\.wez\\.wezterm$"
-                  ],
-                  "file_paths": [
-                      "/Users/ftherb/build_apps/alacritty/target/release/alacritty"
-                  ]
-              }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": { "key_code": "l", "modifiers": { "mandatory": ["control"] } },
-          "to": [{ "key_code": "right_arrow" }]
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": ["control"]
+            }
+          ],
           "conditions": [
               {
                   "type": "frontmost_application_unless",

@@ -11,9 +11,11 @@ fi
 mkdir $1
 cd $1
 
-cp -r ${TEMPLATE_DIR}/slide ./slide
-cp -r ${TEMPLATE_DIR}/theme ./theme
+cp -r ${TEMPLATE_DIR}/slides ./slides
+cp -r ${TEMPLATE_DIR}/themes ./themes
 cp ${TEMPLATE_DIR}/run.sh ./run.sh
+cp ${TEMPLATE_DIR}/.marprc.yml ./.marprc.yml
+cp ${TEMPLATE_DIR}/engine.mjs ./engine.mjs
 cp ${TEMPLATE_DIR}/package.json ./package.json
 
 echo 'Installing marp-cli...'

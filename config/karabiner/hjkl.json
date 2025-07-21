@@ -1,4 +1,5 @@
 {
+  "title": "c-h/j/k/l to arrow keys",
   "rules": [
     {
       "description": "Use C-h/j/k/l as arrow keys (Vim-style)",
@@ -6,7 +7,7 @@
         {
           "type": "basic",
           "from": { "key_code": "h", "modifiers": { "mandatory": ["control"] } },
-          "to": [{ "key_code": "left_arrow" }]
+          "to": [{ "key_code": "left_arrow" }],
           "conditions": [
               {
                   "type": "frontmost_application_unless",
@@ -22,7 +23,7 @@
         {
           "type": "basic",
           "from": { "key_code": "j", "modifiers": { "mandatory": ["control"] } },
-          "to": [{ "key_code": "down_arrow" }]
+          "to": [{ "key_code": "down_arrow" }],
           "conditions": [
               {
                   "type": "frontmost_application_unless",
@@ -38,7 +39,7 @@
         {
           "type": "basic",
           "from": { "key_code": "k", "modifiers": { "mandatory": ["control"] } },
-          "to": [{ "key_code": "up_arrow" }]
+          "to": [{ "key_code": "up_arrow" }],
           "conditions": [
               {
                   "type": "frontmost_application_unless",
@@ -54,7 +55,7 @@
         {
           "type": "basic",
           "from": { "key_code": "l", "modifiers": { "mandatory": ["control"] } },
-          "to": [{ "key_code": "right_arrow" }]
+          "to": [{ "key_code": "right_arrow" }],
           "conditions": [
               {
                   "type": "frontmost_application_unless",

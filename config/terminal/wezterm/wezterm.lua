@@ -17,6 +17,15 @@ config.colors = {
     cursor_border = "#88d8fc"
 }
 
+config.cell_widths = {
+  -- Powerline Symbols (U+E0B0 - U+E0B3)
+  { first = 0xe0b0, last = 0xe0b3, width = 1 },
+
+  -- Powerline Extra Symbols
+  { first = 0xe0a0, last = 0xe0a3, width = 1 },
+  { first = 0xe0b4, last = 0xe0d4, width = 1 },
+}
+
 
 
 -- local mux = wezterm.mux
