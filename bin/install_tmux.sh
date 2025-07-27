@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo 'Removing tmux'
+rm -rf ${HOME}/.local/tmux
+
 cd ${HOME}
 cd tmux_build
 
