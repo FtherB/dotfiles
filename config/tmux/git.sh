@@ -73,9 +73,13 @@ fi
 # status
 output="${WHITE}[${repo_name}] ${branch}: "
 output+="${YELLOW}~${tilde} ${GREEN}+${plus} ${RED}-${minus}"
-[[ $staged -gt 0 ]] && output+=" ${WHITE}*${staged}"
-[[ $insertions -gt 0 ]] && output+=" ${GREEN}⊕${insertions}"
-[[ $deletions -gt 0 ]] && output+=" ${RED}⊖${deletions}"
+output+=" ${WHITE}*${staged}"
+output+=" ${GREEN}⊕${insertions}"
+output+=" ${RED}⊖${deletions}"
 [[ -n "$arrow" ]] && output+=" $arrow"
+
+# [[ $staged -gt 0 ]] && output+=" ${WHITE}*${staged}"
+# [[ $insertions -gt 0 ]] && output+=" ${GREEN}⊕${insertions}"
+# [[ $deletions -gt 0 ]] && output+=" ${RED}⊖${deletions}"
 
 echo -n "$output"
