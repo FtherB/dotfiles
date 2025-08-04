@@ -14,15 +14,15 @@ reinstall() {
 case $1 in
     init)
         init
-        return 0
+        exit 0
         ;;
     re)
         reinstall
-        return 0
+        exit 0
         ;;
     *)
         echo 'invalid argument'
-        return 1
+        exit 1
         ;;
 esac
 echo 'invalid argument'
