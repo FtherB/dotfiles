@@ -6,11 +6,7 @@ $username\
 $directory\
 [](fg:#3B76F0 bg:#00507A)\
 $python\
-[](fg:#00507A bg:#8fff96)\
-$git_branch\
-$git_status\
-$git_metrics\
-[](fg:#8fff96 bg:#1C3A5E)\
+[](fg:#00507a bg:#1c3a5e)\
 $cmd_duration\
 [](fg:#1c3a5e)\
 $line_break\
@@ -55,16 +51,18 @@ style = "fg:#E4E4E4 bg:#00507A"
 format = '[ $symbol$branch(:$remote_branch) ]($style)'
 symbol = "  "
 style = "fg:#1C3A5E bg:#8fff96"
+disabled = true
 
 [git_status]
 format = '[$all_status]($style)'
 style = "fg:#1C3A5E bg:#8fff96"
+disabled = true
 
 [git_metrics]
 format = "([+$added]($added_style))[ ]($added_style)"
 added_style = "fg:#1C3A5E bg:#8fff96"
 deleted_style = "fg:bright-red bg:235"
-disabled = false
+disabled = true
 
 [hg_branch]
 format = "[ $symbol$branch ]($style)"
