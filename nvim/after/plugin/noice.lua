@@ -1,4 +1,18 @@
 require("noice").setup({
+    messages = {
+        enabled = true,
+        view = "mini",
+        view_error = "popup",
+        view_warn = "popup",
+        view_history = "split",
+    },
+    views = {
+        notify = {
+            border = {
+                style = "rounded",
+            },
+        },
+    },
     lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
@@ -19,12 +33,9 @@ require("noice").setup({
         {
             filter = {
                 any = {
-                    { event = "msg_show", find = "deprecated" },
-                    { event = "lsp", find = "deprecated" },
-                    { event = "notify", find = "deprecated" },
-                    { event = "msg_show", find = "border chars must be one call" },
-                    { event = "lsp", find = "border chars must be one call" },
-                    { event = "notify", find = "border chars must be one call" },
+                    { event = "msg_show", find = "border chars" },
+                    { event = "msg_showerr", find = "border chars" },
+                    { event = "notify", find = "border chars" },
                 },
             },
             opts = { skip = true },
@@ -32,4 +43,14 @@ require("noice").setup({
     },
 })
 
+vim.notify = require("noice").notify
 
+-- hide message
+local orig_echo = vim.api.nvim_echo
+vim.api.nvim_echo = function(msg, history, opts)
+  local text = table.concat(vim.tbl_map(function(m) return m[1] end, msg), " ")
+  if string.find(text:lower(), "client.is_stopped") then
+    return  -- skip deprecated messages
+  end
+  orig_echo(msg, history, opts)
+end
