@@ -72,12 +72,18 @@ else
     arrow+="${GREY}xx"
 fi
 
+
+# format
+[[ $tilde -eq 0 ]] && CHANGED_OUT="${GREY}~0" || CHANGED_OUT="${YELLOW}~${tilde}"
+[[ $plus -eq 0 ]] && ADDED_OUT="${GREY}+0" || ADDED_OUT="${GREEN}+${plus}"
+[[ $minus -eq 0 ]] && REMOVED_OUT="${GREY}-0" || REMOVED_OUT="${RED}-${minus}"
+[[ $staged -eq 0 ]] && STAGED_OUT="${GREY}*0" || STAGED_OUT="${WHITE}*${staged}"
+[[ $insertions -eq 0 ]] && INSERT_OUT="${GREY}⊕0" || INSERT_OUT="${GREEN}⊕${insertions}"
+[[ $deletions -eq 0 ]] && DELETE_OUT="${GREY}⊖0" || DELETE_OUT="${RED}⊖${deletions}"
+
 # status
 output="${WHITE}[${repo_name}] ${branch}: "
-output+="${YELLOW}~${tilde} ${GREEN}+${plus} ${RED}-${minus}"
-output+=" ${WHITE}*${staged}"
-output+=" ${GREEN}⊕${insertions}"
-output+=" ${RED}⊖${deletions}"
+output+="${CHANGED_OUT} ${ADDED_OUT} ${REMOVED_OUT} ${STAGED_OUT} ${INSERT_OUT} ${DELETE_OUT}"
 [[ -n "$arrow" ]] && output+=" $arrow"
 
 # [[ $staged -gt 0 ]] && output+=" ${WHITE}*${staged}"
