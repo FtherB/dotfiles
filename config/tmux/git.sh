@@ -68,6 +68,8 @@ if git rev-parse --abbrev-ref --symbolic-full-name @{u} &>/dev/null; then
         arrow+="${GREY}↓"
     fi
     arrow+=""
+else
+    arrow+="${GREY}xx"
 fi
 
 # status
