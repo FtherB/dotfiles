@@ -29,6 +29,7 @@ km.set('n','<localleader>m','<cmd>Mason<CR>')
 -- other keymaps
 km.set({'n','v','o'},'<leader>h','^')
 km.set({'n','v','o'},'<leader>l','$')
+km.set('n','q:', '<Nop>', {noremap = true})
 
 -- markdown
 km.set('n','<leader>mp','<cmd>MarkdownPreviewToggle<CR>')
