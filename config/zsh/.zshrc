@@ -20,6 +20,12 @@ if [ -d $ZSHDIR ] && [ -r $ZSHDIR ] && [ -x $ZSHDIR ]; then
             # echo "source ${filem}"
         done
     fi
+    if [ -d ${ZSHDIR}/secret ]; then
+        for files in ${ZSHDIR}/secret/**/*.zsh; do
+            [ -r $files ] && source $files
+            # echo "source ${filea}"
+        done
+    fi
 fi
 
 
