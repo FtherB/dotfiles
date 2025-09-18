@@ -31,12 +31,9 @@ require("lazy").setup(
     'neovim/nvim-lspconfig',
     {
         'mason-org/mason.nvim',
-        version = "^1.0.0",
     },
     {
         'mason-org/mason-lspconfig.nvim',
-        version = "^1.0.0",
-
     },
 
     -- auto cmp
@@ -180,6 +177,26 @@ require("lazy").setup(
             "nvim-neotest/nvim-nio",
             { "theHamsta/nvim-dap-virtual-text", opts = {}}
         },
+    },
+
+    {
+        "hat0uma/csvview.nvim",
+        ---@module "csvview"
+        ---@type CsvView.Options
+        opts = {
+            parser = { comments = {"#", "//"} },
+            keymaps = {
+                textobject_field_inner = { "if", mode = { "o", "x" } },
+                textobject_field_outer = { "af", mode = { "o", "x" } },
+                jump_prev_field_end = { "H", mode = {"n", "v"} },
+                jump_next_field_end = { "L", mode = {"n", "v"} },
+                jump_prev_row = { "K", mode = {"n", "v"} },
+                jump_next_row = { "J", mode = {"n", "v"} },
+            },
+        },
+        lazy = true,
+        cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+        enabled = false,
     },
 },
 -- lazy options
