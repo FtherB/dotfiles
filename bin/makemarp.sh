@@ -14,6 +14,7 @@ cd $1
 cp -r ${TEMPLATE_DIR}/slides ./slides
 cp -r ${TEMPLATE_DIR}/themes ./themes
 cp ${TEMPLATE_DIR}/run.sh ./run.sh
+chmod 0755 ./run.sh
 cp ${TEMPLATE_DIR}/.marprc.yml ./.marprc.yml
 cp ${TEMPLATE_DIR}/engine.mjs ./engine.mjs
 cp ${TEMPLATE_DIR}/package.json ./package.json
