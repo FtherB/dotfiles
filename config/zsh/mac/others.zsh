@@ -1,4 +1,6 @@
 export PATH="/usr/local/texlive/2024/bin/universal-darwin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
 
 fortune
 
