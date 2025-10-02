@@ -187,16 +187,9 @@ filetype *.img open
 filetype *.pkg open
 
 " Office files
-filetype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
-         \<application/vnd.openxmlformats-officedocument.*,
-          \application/msword,
-          \application/vnd.ms-excel>
-       \ open -a LibreOffice.app
-fileviewer {*.doc},<application/msword> antiword -
-fileviewer {*.docx},
-          \<application/
-           \vnd.openxmlformats-officedocument.wordprocessingml.document>
-         \ docx2txt.pl %f -
+filetype *.pptx,*.ppt,*.pptm,*.potx open -a 'Microsoft PowerPoint.app'
+filetype *.xlsx,*.xls,*.xlsm open -a 'Microsoft Excel.app'
+filetype *.docx,*.doc,*.docm open -a 'Microsoft Word.app'
 
 " Syntax highlighting in preview
 "
