@@ -26,8 +26,23 @@ if [ "$OS_TYPE" = "Darwin" ]; then
     cpu_usage=$(echo "$cpu_use" | cut -d. -f1)
 else
     # for Linux
-    cpu_idle=$(top -bn1 | grep "Cpu(s)" | sed 's/.*, *\([0-9.]*\)%* id.*/\1/' | cut -d. -f1)
-    cpu_usage=$((100 - cpu_idle))
+    TOP=$(top -b -d 1 -n 1)
+
+    IFS=$'\n';
+    for line in `echo -e "$TOP"`
+    do
+            if [[ "$line" == *"Cpu"* ]];then
+                    IFS=',' read -r -a array <<< "$line"
+                    for el in "${array[@]}"; do
+                            if [[ "$el" == *"id"* ]];then
+                                    IFS="." read -r -a p <<< $el
+                                    cpu_usage=`echo $(( 100 - ${p[0]}))`
+                                    break
+                            fi
+                    done
+                    break
+            fi
+    done
 fi
 cpu_status=$(printf "CPU:%3s%%" "$cpu_usage")
 
