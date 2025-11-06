@@ -52,6 +52,8 @@ vim.opt.pumblend = 20
 vim.opt.signcolumn = "yes"
 vim.opt.mouse = 'a'
 vim.opt.scrolloff=10
+vim.opt.sidescrolloff=16
+vim.opt.sidescroll=1
 
 -- system
 vim.opt.ignorecase = true
@@ -60,15 +62,7 @@ vim.opt.updatetime = 300
 
 vim.o.clipboard = 'unnamedplus'
 
-vim.opt.whichwrap:append('b')
-vim.opt.whichwrap:append('s')
-vim.opt.whichwrap:append('h')
-vim.opt.whichwrap:append('l')
-vim.opt.whichwrap:append('<')
-vim.opt.whichwrap:append('>')
-vim.opt.whichwrap:append('[')
-vim.opt.whichwrap:append(']')
-
+vim.opt.whichwrap:append("b,s,h,l,<,>,[,]")
 
 -- vim.keymap.set('n','<Leader>a',"<cmd>echo 'hello'<CR>")
 --
@@ -81,3 +75,6 @@ vim.fn.setcellwidths {
     { 0xe0b0, 0xe0d4, 1},
     { 0xe0a0, 0xe0a3, 1},
 }
+
+-- pairs
+vim.opt.matchpairs:append("（:）,「:」,『:』,【:】,［:］,＜:＞")
