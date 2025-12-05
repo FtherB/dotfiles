@@ -35,6 +35,9 @@ set matchtime=1
 set ruler
 set background=dark
 set ttimeoutlen=10
+set scrolloff=10
+set sidescrolloff=16
+set sidescroll=1
 
 " clipboard
 set clipboard&
