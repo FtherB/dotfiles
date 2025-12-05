@@ -18,13 +18,13 @@ family = "Hack Nerd Font Mono"
 x = 0
 y = 0
 
-[terminal.shell]
-program = "/opt/homebrew/bin/zsh"
-args = [
-    "-l",
-    "-c",
-    "cd ~/ && (~/.local/tmux/bin/tmux a -t 0 || ~/.local/tmux/bin/tmux -u)",
-]
+# [terminal.shell]
+# program = "/opt/homebrew/bin/zsh"
+# args = [
+#     "-l",
+#     "-c",
+#     "cd ~/ && (~/.local/tmux/bin/tmux a -t 0 || ~/.local/tmux/bin/tmux -u)",
+# ]
 
 [window]
 opacity = 1
