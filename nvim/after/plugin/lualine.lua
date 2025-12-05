@@ -1,15 +1,16 @@
 local function custom_gitdiff()
+    vim.api.nvim_set_hl(0, 'MyDiffAdd', { fg = '#00ff00' })
+    vim.api.nvim_set_hl(0, 'MyDiffChange', { fg = '#ffff00' })
+    vim.api.nvim_set_hl(0, 'MyDiffDelete', { fg = '#ff0000' })
+    vim.api.nvim_set_hl(0, 'MyDiffGrey', { fg = '#888888' })
+
     local gitsigns = vim.b.gitsigns_status_dict
-    if not gitsigns then return '' end
+    if not gitsigns then return 'no git' end
 
     local added = gitsigns.added or 0
     local changed = gitsigns.changed or 0
     local removed = gitsigns.removed or 0
 
-    vim.api.nvim_set_hl(0, 'MyDiffAdd', { fg = '#00ff00' })
-    vim.api.nvim_set_hl(0, 'MyDiffChange', { fg = '#ffff00' })
-    vim.api.nvim_set_hl(0, 'MyDiffDelete', { fg = '#ff0000' })
-    vim.api.nvim_set_hl(0, 'MyDiffGrey', { fg = '#888888' })
 
     local result = {}
     if changed > 0 then
