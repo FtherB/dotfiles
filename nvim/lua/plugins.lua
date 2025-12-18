@@ -28,7 +28,9 @@ require("lazy").setup(
     },
 
     -- LSP
-    'neovim/nvim-lspconfig',
+    {
+        'neovim/nvim-lspconfig',
+    },
     {
         'mason-org/mason.nvim',
     },
@@ -37,9 +39,24 @@ require("lazy").setup(
     },
 
     -- auto cmp
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/vim-vsnip",
+    {
+        "saghen/blink.cmp",
+        version = "*",
+        dependencies = {
+            "saghen/blink.compat",
+        },
+        opts = {
+            -- empty
+        },
+    },
+    {
+        "hrsh7th/cmp-nvim-lsp",
+        enabled = true,
+    },
+    {
+        "hrsh7th/vim-vsnip",
+        enabled = true,
+    },
 
     {
         'windwp/nvim-autopairs',
