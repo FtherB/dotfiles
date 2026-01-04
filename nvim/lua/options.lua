@@ -24,6 +24,7 @@ vim.opt.showcmd = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.matchtime = 1
+vim.opt.smartcase = true
 
 --colorscheme
 vim.opt.termguicolors = true

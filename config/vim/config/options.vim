@@ -21,6 +21,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set belloff=all
+set smartcase
 
 " view
 set cursorline

@@ -50,11 +50,9 @@ link_directory ~/dotfiles/config/terminal/warp ~/.warp
 # tmux config
 link_file ~/dotfiles/config/tmux/tmux.conf ~/.tmux.conf
 
-# powerline10k
-# link_file ~/dotfiles/config/zsh/.p10k.zsh ~/.p10k.zsh
-
-# .vimrc
-link_file ~/dotfiles/config/.vimrc ~/.vimrc
+# vim
+link_file ~/dotfiles/config/vim/vimrc ~/.vimrc
+link_directory ~/dotfiles/config/vim ~/.vim
 
 # alacritty
 mkdir -p ${HOME}/.config/alacritty
