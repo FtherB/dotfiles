@@ -19,11 +19,17 @@ format = "$symbol"
 
 [os.symbols]
 Arch = ""
+CentOS = ""
+Fedora = ""
+FreeBSD = ""
 Macos = ""
+Mint = ""
 Ubuntu = ""
 Windows = "󰍲"
 Debian = ""
 Raspbian = ""
+Linux = ""
+
 
 [hostname]
 format = "[ $ssh_symbol$hostname ]($style)"
