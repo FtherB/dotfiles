@@ -16,4 +16,6 @@ unset __conda_setup
 
 # . "/usr/local/env"
 
-. "$HOME/.local/bin/env"
+if [ -e $HOME/.local/bin/env ]; then
+    . "$HOME/.local/bin/env"
+fi

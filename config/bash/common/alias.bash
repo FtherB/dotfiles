@@ -1,5 +1,10 @@
-alias vi="nvim"
-alias view="nvim -R"
+if command -v nvim &> /dev/null; then
+    alias vi="nvim"
+    alias view="nvim -R"
+else
+    alias vi="vim"
+fi
+
 alias sudo="sudo "
 
 alias python="python3"
