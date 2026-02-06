@@ -3,6 +3,7 @@ nvim/lazy-lock.json
 config/zsh/.zshenv
 config/zsh/api/*
 config/zsh/secret/*
+config/bash/secret/*
 
 *.log
 

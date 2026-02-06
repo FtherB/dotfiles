@@ -1,0 +1,21 @@
+BASHDIR="${HOME}/dotfiles/config/bash"
+if [ -d $BASHDIR ] && [ -r $BASHDIR ] && [ -x $BASHDIR ]; then
+    for file in `\find ${BASHDIR}/common -name '*.bash'`; do
+        [ -r $file ] && source $file
+    done
+
+    if [ `uname` = "Darwin" ]; then
+        for filem in `\find ${BASHDIR}/mac -name '*.bash'`; do
+            [ -r $filem ] && source $filem
+        done
+    elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
+        for filel in `\find ${BASHDIR}/linux -name '*.bash'`; do
+            [ -r $filel ] && source $filel
+        done
+    fi
+    if [ -d ${BASHDIR}/secret ]; then
+        for files in `\find ${BASHDIR}/secret -name '*.bash'`; do
+            [ -r $files ] && source $files
+        done
+    fi
+fi
