@@ -89,3 +89,5 @@ link_file ~/dotfiles/config/cmus/rc ~/.config/cmus/rc
 mkdir -p ~/.config/karabiner/assets
 link_directory ~/dotfiles/config/karabiner ~/.config/karabiner/assets/complex_modifications
 
+# conda
+link_file ~/dotfiles/config/condarc ~/.condarc
