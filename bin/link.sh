@@ -35,6 +35,12 @@ link_directory ~/dotfiles/nvim ~/.config/nvim
 # .zshrc
 link_file ~/dotfiles/config/zsh/.zshrc ~/.zshrc
 
+# bash
+if [ `uname` = "Darwin" ]; then
+    link_file ~/dotfiles/config/bash/bash_profile_mac ~/.bash_profile
+fi
+link_file ~/dotfiles/config/bash/bashrc ~/.bashrc
+
 # .gitconifg
 link_file ~/dotfiles/config/git_config/.gitconfig ~/.gitconfig
 
@@ -82,3 +88,4 @@ link_file ~/dotfiles/config/cmus/rc ~/.config/cmus/rc
 # karabiner
 mkdir -p ~/.config/karabiner/assets
 link_directory ~/dotfiles/config/karabiner ~/.config/karabiner/assets/complex_modifications
+
