@@ -13,10 +13,21 @@ alias pip="python3 -m pip"
 alias py="python3"
 
 # ls
-alias ls="lsd"
-export LSCOLORS=gxfxcxdxbxGxDxabagaca
+if command -v lsd &> /dev/null; then
+    alias l="lsd -a"
+    alias ls="lsd"
+    alias ll="lsd -al"
+    alias llt="lsd -alt"
+else
+    alias l="ls -a"
+    alias ll="ls -al"
+    alias llt="ls -alt"
+fi
 
-alias l="lsd -a"
+if [ `uname` = "Darwin" ]; then
+    export LSCOLORS=gxfxcxdxbxGxDxabagaca
+fi
+
 
 alias globalip="curl ipecho.net/plain; echo"
 
