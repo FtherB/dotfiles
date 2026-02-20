@@ -69,7 +69,7 @@ PS1_SP4_R="${ESC_STR}[38;2;0;79;122;48;2;28;58;94m${SEPARATOR}"
 SKIP_PY_R="${ESC_STR}[38;2;59;118;240;48;2;28;58;94m${SEPARATOR}"
 PY_STY_R="${ESC_STR}[38;2;228;228;228;48;2;0;79;122m"
 
-# zsh: ANSI escape をプロンプト安全にするラッパ
+# zsh: ANSI escape
 __pesc() { print -nr -- "%{$1%}"; }
 
 show_python() {
@@ -168,7 +168,7 @@ timer_precmd() {
   __CMD_START_SEC=""
   __CMD_START_USEC=""
 
-  # ★ ここで毎回PROMPTを作り直す（これが決定打）
+  # reload prompt
   local cont os
   if is_container; then cont='(container)'; else cont=''; fi
   os="$(os_symbols)"
@@ -182,7 +182,7 @@ $(show_python)\
 %F{#1c3a52}%k${SEPARATOR}%f%k${LINE_BREAK}❯ "
 }
 
-# フック登録（重複回避）
+# hook
 (( ${preexec_functions[(Ie)timer_preexec]} )) || preexec_functions+=(timer_preexec)
 (( ${precmd_functions[(Ie)timer_precmd]} )) || precmd_functions+=(timer_precmd)
 # ==========================================
