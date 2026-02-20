@@ -72,7 +72,7 @@ function show_python() {
     venv="$(show_venv)"
 
     if [[ -n "$conda" && -n "$venv" ]]; then
-        printf '%s %s%s%s %s' "${PS1_SP3_R}" "${PY_STY_R}" "$conda" "$venv" "${PS1_SP4}"
+        printf '%s %s%s%s %s' "${PS1_SP3_R}" "${PY_STY_R}" "$conda" "$venv" "${PS1_SP4_R}"
     elif [ -n "$conda" ]; then
         printf '%s %s%s %s' "${PS1_SP3_R}" "${PY_STY_R}" "$conda" "${PS1_SP4_R}"
     elif [ -n "$venv" ]; then
@@ -87,6 +87,8 @@ __CMD_START_NS=""
 __LAST_ELAPSED_MS=0
 __TIMER_ARMED=1
 __IN_PROMPT=0
+__HAVE_LAST=0
+__FIRST_PROMPT=1
 
 _now_ns() {
   if date +%s%N >/dev/null 2>&1; then
@@ -97,29 +99,63 @@ _now_ns() {
 }
 
 timer_debug_trap() {
+  # PS1展開やPROMPT_COMMAND中は無視
   (( __IN_PROMPT )) && return 0
 
+  # いま実行されようとしているコマンド
+  local cmd="$BASH_COMMAND"
+
+  # PROMPT_COMMAND/内部関数でタイマーが誤作動しないよう除外
+  case "$cmd" in
+    timer_prompt_hook*|timer_debug_trap*|_now_ns*|format_duration*|timer_ps1* )
+      return 0
+      ;;
+  esac
+
+  # ここに来た = ユーザが何かコマンドを実行し始めた
   if (( __TIMER_ARMED )); then
     __CMD_START_NS="$(_now_ns)"
     __TIMER_ARMED=0
+    __HAVE_LAST=0
   fi
 }
 
 timer_prompt_hook() {
   __IN_PROMPT=1
 
-  if [[ -n "${__CMD_START_NS:-}" ]]; then
+  if (( __FIRST_PROMPT )); then
+      __FIRST_PROMPT=0
+      __LAST_ELAPSED_MS=0
+      __HAVE_LAST=0
+      __CMD_START_NS=""
+      __TIMER_ARMED=1
+      __IN_PROMPT=0
+      return 0
+  fi
+
+
+  local last_cmd
+  last_cmd="$(history 1 | sed 's/^[ ]*[0-9]\+[ ]*//')"
+
+  if [[ -z "${last_cmd// }" ]]; then
+    # 空Enterなら無効扱い
+    __LAST_ELAPSED_MS=0
+    __HAVE_LAST=0
+  elif [[ -n "${__CMD_START_NS:-}" ]]; then
     local end
     end="$(_now_ns)"
     __LAST_ELAPSED_MS=$(( (end - __CMD_START_NS) / 1000000 ))
+    __HAVE_LAST=1
   else
     __LAST_ELAPSED_MS=0
+    __HAVE_LAST=0
   fi
 
   __CMD_START_NS=""
   __TIMER_ARMED=1
   __IN_PROMPT=0
 }
+
 
 format_duration() {
   local ms d h m s out=""
@@ -139,7 +175,11 @@ format_duration() {
 
 timer_ps1() {
   local ms="${__LAST_ELAPSED_MS:-0}"
-  printf ' %s ' "$(format_duration "$ms")"
+  if (( __HAVE_LAST )); then
+      printf ' %s ' "$(format_duration "$ms")"
+  else
+      printf ' - '
+  fi
 }
 
 trap 'timer_debug_trap' DEBUG
