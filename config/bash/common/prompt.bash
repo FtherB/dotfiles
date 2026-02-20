@@ -99,20 +99,20 @@ _now_ns() {
 }
 
 timer_debug_trap() {
-  # PS1展開やPROMPT_COMMAND中は無視
+  # ignore ps1 or PROMPT_COMMAND
   (( __IN_PROMPT )) && return 0
 
-  # いま実行されようとしているコマンド
+  # what command
   local cmd="$BASH_COMMAND"
 
-  # PROMPT_COMMAND/内部関数でタイマーが誤作動しないよう除外
+  # malfunction prevention
   case "$cmd" in
     timer_prompt_hook*|timer_debug_trap*|_now_ns*|format_duration*|timer_ps1* )
       return 0
       ;;
   esac
 
-  # ここに来た = ユーザが何かコマンドを実行し始めた
+  # new command
   if (( __TIMER_ARMED )); then
     __CMD_START_NS="$(_now_ns)"
     __TIMER_ARMED=0
@@ -138,7 +138,7 @@ timer_prompt_hook() {
   last_cmd="$(history 1 | sed 's/^[ ]*[0-9]\+[ ]*//')"
 
   if [[ -z "${last_cmd// }" ]]; then
-    # 空Enterなら無効扱い
+    # no command
     __LAST_ELAPSED_MS=0
     __HAVE_LAST=0
   elif [[ -n "${__CMD_START_NS:-}" ]]; then
