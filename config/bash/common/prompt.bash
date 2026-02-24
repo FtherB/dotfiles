@@ -85,9 +85,9 @@ function show_python() {
 
 __CMD_START_NS=""
 __LAST_ELAPSED_MS=0
-__TIMER_ARMED=1
-__IN_PROMPT=0
 __HAVE_LAST=0
+__IN_PROMPT=0
+__CMD_ACTIVE=0
 __FIRST_PROMPT=1
 
 _now_ns() {
@@ -99,49 +99,36 @@ _now_ns() {
 }
 
 timer_debug_trap() {
-  # ignore ps1 or PROMPT_COMMAND
   (( __IN_PROMPT )) && return 0
 
-  # what command
+  (( __CMD_ACTIVE )) && return 0
+
   local cmd="$BASH_COMMAND"
 
-  # malfunction prevention
   case "$cmd" in
-    timer_prompt_hook*|timer_debug_trap*|_now_ns*|format_duration*|timer_ps1* )
+    timer_*|_now_ns*|format_duration* )
       return 0
       ;;
   esac
 
-  # new command
-  if (( __TIMER_ARMED )); then
-    __CMD_START_NS="$(_now_ns)"
-    __TIMER_ARMED=0
-    __HAVE_LAST=0
-  fi
+  __CMD_START_NS="$(_now_ns)"
+  __CMD_ACTIVE=1
 }
 
 timer_prompt_hook() {
   __IN_PROMPT=1
 
   if (( __FIRST_PROMPT )); then
-      __FIRST_PROMPT=0
-      __LAST_ELAPSED_MS=0
-      __HAVE_LAST=0
-      __CMD_START_NS=""
-      __TIMER_ARMED=1
-      __IN_PROMPT=0
-      return 0
+    __FIRST_PROMPT=0
+    __HAVE_LAST=0
+    __LAST_ELAPSED_MS=0
+    __CMD_START_NS=""
+    __CMD_ACTIVE=0
+    __IN_PROMPT=0
+    return 0
   fi
 
-
-  local last_cmd
-  last_cmd="$(history 1 | sed 's/^[ ]*[0-9]\+[ ]*//')"
-
-  if [[ -z "${last_cmd// }" ]]; then
-    # no command
-    __LAST_ELAPSED_MS=0
-    __HAVE_LAST=0
-  elif [[ -n "${__CMD_START_NS:-}" ]]; then
+  if (( __CMD_ACTIVE )) && [[ -n "$__CMD_START_NS" ]]; then
     local end
     end="$(_now_ns)"
     __LAST_ELAPSED_MS=$(( (end - __CMD_START_NS) / 1000000 ))
@@ -152,10 +139,9 @@ timer_prompt_hook() {
   fi
 
   __CMD_START_NS=""
-  __TIMER_ARMED=1
+  __CMD_ACTIVE=0
   __IN_PROMPT=0
 }
-
 
 format_duration() {
   local ms d h m s out=""
@@ -184,11 +170,7 @@ timer_ps1() {
 
 trap 'timer_debug_trap' DEBUG
 
-if [[ -n "${PROMPT_COMMAND:-}" ]]; then
-  PROMPT_COMMAND="timer_prompt_hook; ${PROMPT_COMMAND}"
-else
-  PROMPT_COMMAND="timer_prompt_hook"
-fi
+PROMPT_COMMAND="timer_prompt_hook${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
 
 OSSYM=`os_symbols`
 export VIRTUAL_ENV_DISABLE_PROMPT=1
