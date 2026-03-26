@@ -9,3 +9,12 @@ export VIM_HOME=$HOME/.local/vim
 if [ -d "${VIM_HOME}" ]; then
     export PATH="${VIM_HOME}/bin:$PATH"
 fi
+
+# nvim alias
+
+if builtin command -v nvim > /dev/null; then
+    alias vi="nvim"
+    alias view="nvim -R"
+elif builtin commanc -v vim > /dev/null; then
+    alias vi="vim"
+fi

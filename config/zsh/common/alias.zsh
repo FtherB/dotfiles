@@ -1,7 +1,3 @@
-
-# nvim
-alias vi="nvim"
-alias view="nvim -R"
 alias sudo="sudo "
 
 # wails
