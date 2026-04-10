@@ -28,7 +28,12 @@ require('render-markdown').setup({
         right_pad = 4,
         width = 'block',
         border = 'thick',
-    }
+    },
+    html = {
+        comment = {
+            conceal = false,
+        },
+    },
 })
 
 
