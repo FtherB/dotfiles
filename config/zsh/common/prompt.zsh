@@ -175,7 +175,8 @@ timer_precmd() {
 
   PROMPT="${LINE_BREAK}\
 %F{#090c0c}%K{#6696ff} ${os} \
-%F{#6696ff}%K{#ffffff}${SEPARATOR}%F{#1c3a5e}%K{#ffffff} %n${cont} \
+%F{#6696ff}%K{#adc7ff}${SEPARATOR}%F{#1c3a52}%K{#adc7ff} %m${cont} \
+%F{#adc7ff}%K{#ffffff}${SEPARATOR}%F{#1c3a5e}%K{#ffffff} %n \
 %F{#ffffff}%K{#3b76f0}${SEPARATOR}%F{#e4e4e4}%K{#3b76f0} %~ \
 $(show_python)\
 %F{#8dfbd2}%K{#1c3a52}$(timer_prompt)\
