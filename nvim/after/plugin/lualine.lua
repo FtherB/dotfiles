@@ -53,7 +53,15 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {},
+    lualine_b = {
+        {
+            'filename',
+            file_status = true,
+            newfile_status = true,
+            path = 2,
+        },
+    },
+    lualine_c = {},
     lualine_x = {custom_gitdiff, 'encoding', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
