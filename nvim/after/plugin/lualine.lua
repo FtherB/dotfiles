@@ -52,25 +52,93 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
+    lualine_a = {
+        {
+            'mode',
+            color = {
+                gui = 'bold,italic',
+            },
+            fmt = function(str)
+                local map = {
+                    NORMAL = 'NOR',
+                    INSERT = 'INS',
+                    VISUAL = 'VIS',
+                    ['V-LINE'] = 'V-L',
+                    ['V-BLOCK'] = 'V-B',
+                    COMMAND = 'CMD',
+                    REPLACE = 'REP',
+                    TERMINAL = 'TER',
+                    SELECT = 'SEL',
+                    EX = 'EX ',
+                    MORE = 'MOR',
+                    CONFIRM = 'CNF',
+                }
+
+                return map[str] or str
+            end,
+        },
+    },
     lualine_b = {
+        {
+            'filetype',
+            colored = true,
+            icon_only = true,
+            separator = '',
+            padding = {
+                left = 1,
+                right = 0,
+            },
+        },
+        {
+            'encoding',
+            separator = '',
+            color = {
+                gui = 'italic',
+            },
+            padding = {
+                left = 0,
+                right = 0,
+            },
+            fmt = function(str)
+                return '(' .. str .. ')'
+            end,
+        },
         {
             'filename',
             file_status = true,
             newfile_status = true,
             path = 2,
+            symbols = {
+                modified = '[+]',
+                readonly = '[RO]',
+                unnamed = '[No Name]',
+                newfile = '[New]'
+            },
+            color = {
+                gui = 'italic',
+            },
         },
     },
     lualine_c = {},
-    lualine_x = {custom_gitdiff, 'encoding', 'filetype'},
+    lualine_x = {'diagnostics',custom_gitdiff},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = {
+        {
+            'filename',
+            file_status = true,
+            newfile_status = true,
+            path = 2,
+            color = {
+                gui = 'italic',
+            },
+        },
+    },
+    lualine_x = {'diagnostics',custom_gitdiff,'location'},
     lualine_y = {},
     lualine_z = {}
   },
