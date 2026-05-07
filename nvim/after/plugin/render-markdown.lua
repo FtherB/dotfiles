@@ -34,6 +34,15 @@ require('render-markdown').setup({
             conceal = false,
         },
     },
+    pipe_table = {
+        enabled = true,
+        cell = "trimmed",
+        padding = 0,
+        min_width = 0,
+        style = "normal",
+        border_enabled = true,
+        border_virtual = false,
+    },
 })
 
 
