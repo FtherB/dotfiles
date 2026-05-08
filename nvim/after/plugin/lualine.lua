@@ -1,3 +1,10 @@
+local function nvimv()
+    local title = 'Neovim'
+    local vfull = vim.api.nvim_exec2("version", {output = true}).output
+    local version = vfull:match("NVIM%s+([^\n]+)")
+    return title .. ' ' .. version
+end
+
 local function custom_gitdiff()
     vim.api.nvim_set_hl(0, 'MyDiffAdd', { fg = '#00ff00' })
     vim.api.nvim_set_hl(0, 'MyDiffChange', { fg = '#ffff00' })
@@ -96,7 +103,7 @@ require('lualine').setup {
                 gui = 'italic',
             },
             padding = {
-                left = 0,
+                left = 1,
                 right = 0,
             },
             fmt = function(str)
@@ -142,7 +149,21 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
+  tabline = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {
+          {
+              nvimv,
+              color = {
+                  gui = 'italic',
+              },
+          },
+      },
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {},
+  },
   winbar = {},
   inactive_winbar = {},
   extensions = {}
