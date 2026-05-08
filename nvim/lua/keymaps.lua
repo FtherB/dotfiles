@@ -54,6 +54,7 @@ wk.add({
     { "<leader>n", group = "Nvim-Tree"},
     { "<leader>h", desc = "Start of line (non ws)"},
     { "<leader>l", desc = "End of line"},
-    { "<leader>m", group = "Markdown plugins"}
+    { "<leader>m", group = "Markdown plugins"},
+    { "<leader>g", group = "gitsigns"},
 })
 wk.setup()
