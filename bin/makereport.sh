@@ -15,5 +15,6 @@ cp ${TEMPLATE_DIR}/main.tex ./main.tex
 cp ${TEMPLATE_DIR}/references.bib ./references.bib
 cp -r ${TEMPLATE_DIR}/content ./content
 cp ${TEMPLATE_DIR}/reportpre.sty ./reportpre.sty
+cp ~/dotfiles/config/latex/latexmkrc_lualatex ./latexmkrc
 
 mkdir figures
