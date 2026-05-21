@@ -39,7 +39,16 @@ require('nightfox').setup({
   },
   palettes = {},
   specs = {},
-  groups = {},
+  groups = {
+      all = {
+          EndOfBuffer = {
+              fg = "bg0",
+          },
+          WinSeparator = {
+              fg = "#39506d"
+          },
+      },
+  },
 })
 
 -- setup must be called before loading
