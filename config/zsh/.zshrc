@@ -28,8 +28,6 @@ if [ -d $ZSHDIR ] && [ -r $ZSHDIR ] && [ -x $ZSHDIR ]; then
     fi
 fi
 
-
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export YVM_DIR=/Users/ftherb/.yvm

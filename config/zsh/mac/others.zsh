@@ -22,3 +22,5 @@ function wezwp() {
     fi
     
 }
+
+export LSCOLORS=gxfxcxdxbxGxDxabagaca
