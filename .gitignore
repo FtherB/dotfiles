@@ -17,4 +17,5 @@ config/vifm/colors/Default.vifm
 config/git_config
 
 config/terminal/wezterm/.wp
-config/terminal/wezterm/\\
+
+\\
