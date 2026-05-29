@@ -19,6 +19,14 @@ style = "Regular"
 family = "HackGen35 Console NF"
 style = "Bold"
 
+[font.italic]
+family = "HackGen35 Console NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "HackGen35 Console NF"
+style = "Bold Italic"
+
 [font.offset]
 x = 0
 y = 0
