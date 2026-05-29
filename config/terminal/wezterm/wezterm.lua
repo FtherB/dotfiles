@@ -37,6 +37,6 @@ config.cell_widths = {
 config.initial_cols = 200
 config.initial_rows = 57
 
-config.background = require("background")
+require("background").apply(config)
 
 return config
