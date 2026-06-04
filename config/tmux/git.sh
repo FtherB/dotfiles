@@ -1,11 +1,22 @@
 #!/bin/bash
 
+pane_active="$1"
+
 # colors
-YELLOW="#[fg=#ffff00]"
-GREEN="#[fg=#00ff00]"
-RED="#[fg=#ff4444]"
-WHITE="#[fg=#ffffff]"
-GREY="#[fg=#888888]"
+if [ $pane_active -eq 1 ]; then
+    YELLOW="#[fg=#ffff00]"
+    GREEN="#[fg=#00ff00]"
+    RED="#[fg=#ff0000]"
+    WHITE="#[fg=#ffffff]"
+    GREY="#[fg=#888888]"
+else
+    YELLOW="#[fg=#aaaa00]"
+    GREEN="#[fg=#00aa00]"
+    RED="#[fg=#aa0000]"
+    WHITE="#[fg=#888888]"
+    GREY="#[fg=#555555]"
+fi
+
 RESET="#[default]"
 
 # Check git repository
@@ -88,6 +99,6 @@ output+="${CHANGED_OUT} ${ADDED_OUT} ${REMOVED_OUT} ${STAGED_OUT} ${INSERT_OUT} 
 
 # [[ $staged -gt 0 ]] && output+=" ${WHITE}*${staged}"
 # [[ $insertions -gt 0 ]] && output+=" ${GREEN}⊕${insertions}"
-# [[ $deletions -gt 0 ]] && output+=" ${RED}⊖${deletions}"
+# fi [[ $deletions -gt 0 ]] && output+=" ${RED}⊖${deletions}"
 
 echo -n "$output"
