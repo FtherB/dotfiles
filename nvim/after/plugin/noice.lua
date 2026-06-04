@@ -40,6 +40,14 @@ require("noice").setup({
             },
             opts = { skip = true },
         },
+        {
+            filter = {
+                event = "msg_show",
+                kind = "",
+                min_height = 10,
+            },
+            opts = { skip = true },
+        },
     },
 })
 
