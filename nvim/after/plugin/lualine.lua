@@ -169,7 +169,14 @@ require('lualine').setup {
             },
         },
     },
-    lualine_x = {'diagnostics',custom_gitdiff,'location'},
+    lualine_x = {'diagnostics',custom_gitdiff,
+        {
+            'location',
+            color = {
+                gui = 'italic',
+            },
+        },
+    },
     lualine_y = {},
     lualine_z = {}
   },
