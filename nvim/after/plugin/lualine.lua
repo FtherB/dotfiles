@@ -5,6 +5,11 @@ local function nvimv()
     return title .. ' ' .. version
 end
 
+local function wc()
+    local c = vim.fn.wordcount()
+    return string.format("%d words, %d chars", c.words, c.chars)
+end
+
 local function custom_gitdiff()
     vim.api.nvim_set_hl(0, 'MyDiffAdd', { fg = '#00ff00', italic = true })
     vim.api.nvim_set_hl(0, 'MyDiffChange', { fg = '#ffff00', italic = true })
@@ -128,6 +133,12 @@ require('lualine').setup {
     },
         lualine_c = {},
         lualine_x = {
+            {
+                wc,
+                color = {
+                    gui = 'italic'
+                },
+            },
             {
                 'diagnostics',
                 color = {
