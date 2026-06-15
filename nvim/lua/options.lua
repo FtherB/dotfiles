@@ -39,12 +39,13 @@ vim.opt.smartindent = true
 
 -- view
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.title = true
 vim.opt.wrap = false
 vim.opt.showtabline = 1
 vim.opt.visualbell = false
 vim.opt.showmatch = true
-vim.opt.relativenumber = true
+vim.opt.showmode = false
 
 -- interface
 vim.opt.winblend = 20
