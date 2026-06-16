@@ -148,6 +148,9 @@ timer_prompt() {
 }
 
 timer_precmd() {
+  local exit_status=$?
+  local EXIT_SYMBOL
+
   if [[ -n "$__CMD_START_SEC" && -n "$__CMD_START_USEC" ]]; then
     local end_sec end_usec sec_diff usec_diff total_usec
     end_sec=$EPOCHSECONDS
@@ -173,14 +176,24 @@ timer_precmd() {
   if is_container; then cont='(container)'; else cont=''; fi
   os="$(os_symbols)"
 
+  if (( exit_status == 0 )); then
+      EXIT_SYMBOL="%F{green}%B(^_^)%f%b"
+  else
+      EXIT_SYMBOL="%F{red}%B(;ω;)%f%b"
+  fi
+
+  ITALIC_ON=$'%{\e[3m%}'
+  ITALIC_OFF=$'%{\e[23m%}'
+
   PROMPT="${LINE_BREAK}\
 %F{#090c0c}%K{#6696ff} ${os} \
-%F{#6696ff}%K{#adc7ff}${SEPARATOR}%F{#1c3a52}%K{#adc7ff} %m${cont} \
+%F{#6696ff}%K{#adc7ff}${SEPARATOR}%F{#1c3a52}%K{#adc7ff} ${ITALIC_ON}%m${cont} \
 %F{#adc7ff}%K{#ffffff}${SEPARATOR}%F{#1c3a5e}%K{#ffffff} %n \
 %F{#ffffff}%K{#3b76f0}${SEPARATOR}%F{#e4e4e4}%K{#3b76f0} %~ \
 $(show_python)\
-%F{#8dfbd2}%K{#1c3a52}$(timer_prompt)\
-%F{#1c3a52}%k${SEPARATOR}%f%k${LINE_BREAK}❯ "
+%F{#8dfbd2}%K{#1c3a52}$(timer_prompt)${ITALIC_OFF}\
+%F{#1c3a52}%k${SEPARATOR}%f%k${LINE_BREAK}\
+${EXIT_SYMBOL} ❯ "
 }
 
 # hook
