@@ -31,6 +31,7 @@ mkdir -p ${HOME}/.config
 
 # nvim
 link_directory ~/dotfiles/nvim ~/.config/nvim
+link_directory ~/dotfiles/nvim_tiny ~/.config/nvim_tiny
 
 # .zshrc
 link_file ~/dotfiles/config/zsh/.zshrc ~/.zshrc
