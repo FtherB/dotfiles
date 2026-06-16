@@ -14,3 +14,5 @@ km.set('i','<C-b>','<BS>')
 km.set({'n','v','o'},'<leader>h','^')
 km.set({'n','v','o'},'<leader>l','$')
 km.set('n','q:', '<Nop>', {noremap = true})
+
+km.set({'n','i','v','o','c'},{'<Left>','<Down>','<Up>','<Right>'},'<Nop>')
