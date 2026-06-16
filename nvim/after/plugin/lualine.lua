@@ -7,7 +7,12 @@ end
 
 local function wc()
     local c = vim.fn.wordcount()
-    return string.format("%d words, %d chars", c.words, c.chars)
+
+    if c.visual_words then
+        return string.format("VIS: %d words, %d chars  %d words, %d chars",c.visual_words,c.visual_chars, c.words, c.chars)
+    else
+        return string.format("%d words, %d chars", c.words, c.chars)
+    end
 end
 
 local function custom_gitdiff()
@@ -65,30 +70,6 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {
-        {
-            'mode',
-            color = {
-                gui = 'bold,italic',
-            },
-            fmt = function(str)
-                local map = {
-                    NORMAL = 'NOR',
-                    INSERT = 'INS',
-                    VISUAL = 'VIS',
-                    ['V-LINE'] = 'V-L',
-                    ['V-BLOCK'] = 'V-B',
-                    COMMAND = 'CMD',
-                    REPLACE = 'REP',
-                    TERMINAL = 'TER',
-                    SELECT = 'SEL',
-                    EX = 'EX ',
-                    MORE = 'MOR',
-                    CONFIRM = 'CNF',
-                }
-
-                return map[str] or str
-            end,
-        },
     },
     lualine_b = {
         {
@@ -192,16 +173,41 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {
+      lualine_a = {
           {
-              nvimv,
+              'mode',
               color = {
-                  gui = 'italic',
+                  gui = 'bold,italic',
               },
+              fmt = function(str)
+                  local map = {
+                      NORMAL = 'NOR',
+                      INSERT = 'INS',
+                      VISUAL = 'VIS',
+                      ['V-LINE'] = 'V-L',
+                      ['V-BLOCK'] = 'V-B',
+                      COMMAND = 'CMD',
+                      REPLACE = 'REP',
+                      TERMINAL = 'TER',
+                      SELECT = 'SEL',
+                      EX = 'EX ',
+                      MORE = 'MOR',
+                      CONFIRM = 'CNF',
+                  }
+
+                  return map[str] or str
+              end,
           },
       },
+      lualine_b = {
+            {
+                nvimv,
+                color = {
+                    gui = 'italic',
+                },
+            },
+      },
+      lualine_c = {},
       lualine_x = {},
       lualine_y = {},
       lualine_z = {},
