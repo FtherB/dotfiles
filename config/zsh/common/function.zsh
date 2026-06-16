@@ -49,8 +49,13 @@ function makemarp() {
 # mkdir and cd
 function mkd() {
     {
-        mkdir -p $1
-        builtin cd $1
+        if [ "$#" -ne 1 ]; then
+            echo 'invalid arguments'
+            return 1
+        else
+            mkdir -p $1
+            builtin cd $1
+        fi
     }
 }
 
