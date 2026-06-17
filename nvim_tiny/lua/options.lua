@@ -28,7 +28,7 @@ vim.opt.smartcase = true
 
 --colorscheme
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+-- vim.opt.background = "dark"
 
 -- indent
 vim.opt.shiftwidth = 4
@@ -67,12 +67,19 @@ vim.o.clipboard = 'unnamedplus'
 
 vim.opt.whichwrap:append("b,s,h,l,<,>,[,]")
 
--- vim.keymap.set('n','<Leader>a',"<cmd>echo 'hello'<CR>")
---
 --language
 vim.opt.langmenu='en_US.UTF-8'
 vim.api.nvim_exec('language message en_US.UTF-8', true)
 
-
 -- pairs
 vim.opt.matchpairs:append("（:）,「:」,『:』,【:】,［:］,＜:＞")
+
+-- transparent background
+vim.cmd([[
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+  highlight NormalNC guibg=none
+  highlight NormalSB guibg=none
+]])
