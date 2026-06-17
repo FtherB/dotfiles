@@ -135,7 +135,7 @@ function M.apply(config)
     config.background = bg_img(flg)
 
     if (flg == "01") then
-        config.window_background_opacity = 0.45
+        config.window_background_opacity = 0.55
     end
 end
 
