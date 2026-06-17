@@ -48,7 +48,7 @@ white = "#f8f8f8"
 background = "#000000"
 
 [colors]
-cursor = { text = "#181818", cursor = "#03dcfc" }
+cursor = { text = "#101010", cursor = "#88d8fc" }
 
 [mouse]
 hide_when_typing = true
