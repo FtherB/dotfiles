@@ -4,6 +4,38 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 SEPARATOR=''
 LINE_BREAK=$'\n'
 
+VI_NOR='[%F{#6696ff}N%f]'
+VI_INS='[%F{green}I%f]'
+VI_MODE=$VI_NOR
+
+function zle-keymap-select {
+    case $KEYMAP in
+        vicmd)
+            VI_MODE=$VI_NOR
+            ;;
+        viins|main)
+            VI_MODE=$VI_INS
+            ;;
+        visual)
+            VI_MODE='[V]'
+            ;;
+        *)
+            VI_MODE='[?]'
+            ;;
+    esac
+
+    zle reset-prompt
+}
+
+zle -N zle-keymap-select
+
+function zle-line-init {
+    VI_MODE=$VI_INS
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+
 function os_symbols() {
     if [ `uname` = Darwin ]; then
         echo ""
@@ -193,7 +225,7 @@ timer_precmd() {
 $(show_python)\
 %F{#8dfbd2}%K{#1c3a52}$(timer_prompt)${ITALIC_OFF}\
 %F{#1c3a52}%k${SEPARATOR}%f%k${LINE_BREAK}\
-${EXIT_SYMBOL} ❯ "
+${EXIT_SYMBOL}%B\${VI_MODE}%b❯ "
 }
 
 # hook
