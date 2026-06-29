@@ -11,12 +11,13 @@ vim.opt.autowriteall=true
 
 -- cursor and view
 vim.opt.cursorline = true
+vim.api.nvim_set_hl(0,'CursorLine',{underline = true})
 
 -- cursor move
 
 -- menu
 vim.opt.wildmenu = true
-vim.opt.cmdheight = 2
+vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.showcmd = true
 
@@ -42,10 +43,10 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.title = true
 vim.opt.wrap = false
-vim.opt.showtabline = 1
+vim.opt.showtabline = 2
 vim.opt.visualbell = false
 vim.opt.showmatch = true
-vim.opt.showmode = true
+vim.opt.showmode = false
 vim.opt.winblend = 0
 vim.opt.pumblend = 0
 
@@ -83,3 +84,15 @@ vim.cmd([[
   highlight NormalNC guibg=none
   highlight NormalSB guibg=none
 ]])
+
+Tabline = require('tabline')
+vim.api.nvim_set_option('tabline', '%!v:lua.Tabline()')
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+    pattern = "*",
+    callback = function()
+        vim.cmd("redrawtabline")
+    end,
+})
+
+require('statusline')
