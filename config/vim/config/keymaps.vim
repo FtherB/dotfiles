@@ -1,5 +1,23 @@
-let mapleader = "\<Space>"
-let maplocalleader = "\\"
+if has("eval")
+    let mapleader = "\<Space>"
+    let maplocalleader = "\\"
+
+    nnoremap <leader>h ^
+    vnoremap <leader>h ^
+    onoremap <leader>h ^
+
+    nnoremap <leader>l $
+    vnoremap <leader>l $
+    onoremap <leader>l $
+else
+    nnoremap <Space>h ^
+    vnoremap <Space>h ^
+    onoremap <Space>h ^
+
+    nnoremap <Space>l $
+    vnoremap <Space>l $
+    onoremap <Space>l $
+endif
 
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
@@ -7,13 +25,6 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
 
-nnoremap <leader>h ^
-vnoremap <leader>h ^
-onoremap <leader>h ^
-
-nnoremap <leader>l $
-vnoremap <leader>l $
-onoremap <leader>l $
 
 function! DisableArrowKeys() abort
     for key in ['<Left>', '<Down>', '<Up>', '<Right>']

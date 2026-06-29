@@ -26,11 +26,9 @@ set smartcase
 " view
 set cursorline
 set foldmethod=indent
-set showmode
 set title
 set showmatch
 set novisualbell
-" syntax on
 set laststatus=2
 set matchtime=1
 set ruler
@@ -39,6 +37,7 @@ set ttimeoutlen=10
 set scrolloff=10
 set sidescrolloff=16
 set sidescroll=1
+set showtabline=2
 
 " clipboard
 set clipboard&
@@ -51,3 +50,15 @@ set backspace=indent,eol,start
 set foldmethod=syntax
 let perl_fold=1
 set foldlevel=100
+
+set noshowmode
+
+if has("termguicolors")
+    set termguicolors
+endif
+
+if has("syntax")
+    syntax on
+endif
+
+colorscheme mdn
