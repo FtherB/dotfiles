@@ -187,6 +187,7 @@ require('lualine').setup {
                       ['V-LINE'] = 'V-L',
                       ['V-BLOCK'] = 'V-B',
                       COMMAND = 'CMD',
+                      ['O-PENDING'] = 'OPD',
                       REPLACE = 'REP',
                       TERMINAL = 'TER',
                       SELECT = 'SEL',
