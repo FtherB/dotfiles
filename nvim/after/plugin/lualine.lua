@@ -49,6 +49,16 @@ local function custom_gitdiff()
     return table.concat(result, ' ')
 end
 
+local function recording()
+    local reg = vim.fn.reg_recording()
+
+    if reg == "" then
+        reg = vim.fn.reg_executing()
+    end
+
+    return reg ~= "" and ("rec @" .. reg) or ""
+end
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -112,7 +122,14 @@ require('lualine').setup {
             },
         },
     },
-        lualine_c = {},
+        lualine_c = {
+            {
+                recording,
+                color = {
+                        gui = 'italic',
+                },
+            },
+        },
         lualine_x = {
             {
                 wc,
