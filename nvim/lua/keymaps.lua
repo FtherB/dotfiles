@@ -21,6 +21,9 @@ km.set('n','<leader>nt','<cmd>NvimTreeToggle<CR>')
 km.set('n','<leader>nf','<cmd>NvimTreeFindFile<CR>')
 km.set('n','<leader>nn','<cmd>NvimTreeToggle<CR>')
 
+-- Fyler
+km.set('n', '<leader>f', '<cmd>Fyler<CR>')
+
 -- telescope
 local builtin = require('telescope.builtin')
 km.set('n','<leader>tf', builtin.find_files, {})
@@ -57,5 +60,6 @@ wk.add({
     { "<leader>l", desc = "End of line"},
     { "<leader>m", group = "Markdown plugins"},
     { "<leader>g", group = "gitsigns"},
+    { "<leader>f", desc = "Fyler"}
 })
 wk.setup()

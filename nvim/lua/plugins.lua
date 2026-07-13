@@ -115,6 +115,17 @@ require("lazy").setup(
         end,
     },
     {
+        "FylerOrg/fyler.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = {
+            integrations = {
+                icon = "nvim_web_devicons",
+            },
+        },
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",opts = {},
         enabled = false,
