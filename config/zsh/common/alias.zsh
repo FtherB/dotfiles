@@ -27,3 +27,5 @@ alias tree='cmd="command tree -a -I .git -I .DS_Store"; echo $cmd; eval ${cmd}'
 if [ -d ${HOME}/.cargo ]; then
     . "$HOME/.cargo/env"
 fi
+
+alias pdf2txt='pdftotext -layout -nopgbrk'
